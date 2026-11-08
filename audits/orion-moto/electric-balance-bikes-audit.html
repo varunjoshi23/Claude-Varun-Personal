@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orion Moto: Electric Balance Bike Page SEO Audit</title>
+<style>
+:root{--bg:#fff;--fg:#1d1d1f;--mut:#6b6b70;--line:#e4e4e7;--card:#fafafa;--crit:#b42318;--high:#c4320a;--med:#b54708;--low:#475467;--pass:#067647;--warn:#b54708;--fail:#b42318;--nc:#667085;--acc:#1f5fbf;--hl:#eef4ff}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--fg:#ececef;--mut:#a0a0a8;--line:#2e2e33;--card:#1c1c20;--hl:#1a2540;--acc:#7fb0ff;--pass:#47cd89;--warn:#fdb022;--fail:#f97066;--crit:#f97066;--high:#fd853a;--med:#fdb022;--low:#98a2b3;--nc:#98a2b3}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;background:var(--bg);color:var(--fg)}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 10px}h3{font-size:15px;margin:16px 0 6px}
+.mut{color:var(--mut)}.small{font-size:13px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 18px;margin:12px 0;font-size:13px}
+.meta b{display:block;color:var(--mut);font-weight:500}
+.banner{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);margin:10px 0;font-size:13px}
+.prog{height:12px;border-radius:6px;background:var(--line);overflow:hidden;display:flex}
+.prog span{display:block;height:100%}
+.score{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.score div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.score .n{font-size:26px;font-weight:650}
+.tabs{display:flex;gap:6px;margin:16px 0 8px;border-bottom:1px solid var(--line)}
+.tabs button{border:0;background:none;padding:8px 12px;font:inherit;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent}
+.tabs button.on{color:var(--fg);border-color:var(--acc);font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
+input,select,textarea{font:inherit;font-size:13px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 7px}
+textarea{width:100%;min-height:54px}
+.row{border:1px solid var(--line);border-radius:8px;margin:6px 0;background:var(--bg)}
+.row summary{list-style:none;cursor:pointer;padding:9px 12px;display:grid;grid-template-columns:78px 1fr 110px 74px 44px 74px 110px;gap:8px;align-items:center;font-size:13px}
+.row summary::-webkit-details-marker{display:none}
+.row .body{padding:4px 14px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.row .body p{margin:6px 0}
+.pill{display:inline-block;padding:1px 7px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.Critical{color:var(--crit)}.High{color:var(--high)}.Medium{color:var(--med)}.Low{color:var(--low)}
+.Pass{color:var(--pass)}.Warn{color:var(--warn)}.Fail{color:var(--fail)}.NC{color:var(--nc)}
+.st-Open{color:var(--mut)}.st-In{color:var(--acc)}.st-Fixed{color:var(--pass)}.st-Not{color:var(--nc)}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}tr.client td{background:var(--hl);font-weight:500}td.behind{color:var(--fail);font-weight:600}
+.scroll{overflow-x:auto}
+pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:13px/1.5 ui-monospace,Menlo,monospace;margin:4px 0}
+.copy{font-size:12px;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);cursor:pointer}
+.ro .ctl select,.ro .ctl input,.ro .ctl textarea{pointer-events:none;opacity:.6}
+@media (max-width:760px){.row summary{grid-template-columns:70px 1fr 64px}.row summary .hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="mut small">Single-page SEO audit · live fix tracker</div>
+  <h1 id="h-title">Orion Moto: electric balance bike landing page</h1>
+  <div class="meta" id="meta"></div>
+</header>
+<div id="notice" class="banner" hidden></div>
+
+<h2>Progress on what needs work</h2>
+<div class="prog" id="prog"></div>
+<div class="small mut" id="progtxt" style="margin-top:6px">Loading…</div>
+
+<h2>Scorecard</h2>
+<div class="score" id="score"></div>
+<div class="small mut" id="basis" style="margin-top:6px"></div>
+
+<h2>Competitor comparison</h2>
+<div class="small mut">Taken from the raw HTML on 8 Nov 2026. Orion is the highlighted top row. Red cells show where Orion trails the set.</div>
+<div class="scroll"><table id="comp"><thead><tr><th>Page</th><th>Type</th><th>Title</th><th>H1</th><th>Main words</th><th>Tables</th><th>Schema</th><th>Reviews</th><th>Breadcrumb</th></tr></thead><tbody>
+<tr class="client"><td>Orion Moto /pages/electric-balance-bikes</td><td>Brand category page</td><td>Buy Kids Electric Balance Bike for Confident Riding</td><td class="behind">None</td><td>1,542 (≈390 are duplicated blog-card text)</td><td class="behind">0</td><td class="behind">Organization, WebSite</td><td class="behind">None</td><td class="behind">None</td></tr>
+<tr><td>RevZilla /ebikes-electric-balance-bikes</td><td>Retail category</td><td>Electric Balance Bikes | True Pedal ‘Power’ For Kids! - RevZilla</td><td>Electric Balance Bikes</td><td>804</td><td>0</td><td>BreadcrumbList (microdata), Organization</td><td>Star ratings per product</td><td>Yes</td></tr>
+<tr><td>Harley-Davidson /shop/c/electric-balance-bikes</td><td>Brand category</td><td>Electric Balance Bikes | Harley-Davidson USA</td><td>Electric Balance Bikes</td><td>769</td><td>0</td><td>Organization</td><td>None</td><td>Yes (visible)</td></tr>
+<tr><td>STACYC homepage</td><td>Brand home / category</td><td>STACYC Electric Stability Cycles - Electric Balance e-Bikes for Kids</td><td>STACYC</td><td>369</td><td>0</td><td>Organization (microdata)</td><td>Parent testimonials</td><td>No</td></tr>
+<tr><td>Kawasaki Elektrode 16</td><td>Brand product</td><td>Kawasaki Elektrode® | Electric Balance Bike | The Good Times™ are Electric</td><td>THE GOOD TIMES ™ ARE ELECTRIC</td><td>1,183</td><td>4 (specs)</td><td>None found</td><td>None</td><td>No</td></tr>
+<tr><td>Hiboy BK1</td><td>Brand product</td><td>Hiboy BK1 Electric Balance Bike For Kids | Adjustable Height | Hiboy</td><td>Hiboy BK1 Electric Balance Bike For Kids</td><td>2,109</td><td>0 (spec grid)</td><td>Product, ProductGroup, FAQPage, BreadcrumbList</td><td>Customer reviews</td><td>Yes (schema)</td></tr>
+</tbody></table></div>
+
+<h3>Content gaps: what competitors cover that Orion's page doesn't</h3>
+<div class="scroll"><table><thead><tr><th>Gap</th><th>Competitors covering it (of 5)</th><th>Where it goes on Orion's page</th></tr></thead><tbody>
+<tr><td>Spec block per model (motor W, voltage, top speed, wheel size, run time)</td><td>3: Kawasaki, Hiboy, STACYC</td><td>New "Compare Orion Electric Balance Bikes by Size" table, reusing data from /pages/comparison-of-bikes</td></tr>
+<tr><td>Reviews, ratings or parent testimonials</td><td>3: RevZilla, STACYC, Hiboy</td><td>New "What Orion Parents Say" block above the FAQ</td></tr>
+<tr><td>Rider weight limit</td><td>3: H-D, Hiboy, Kawasaki</td><td>Spec table column plus a new FAQ</td></tr>
+<tr><td>Age band stated per size</td><td>4: H-D, Kawasaki, Hiboy, STACYC (model names)</td><td>Spec table column; today only e12x and e16x names carry an age</td></tr>
+<tr><td>Breadcrumb trail</td><td>3: RevZilla, H-D, Hiboy</td><td>Theme breadcrumb plus BreadcrumbList schema</td></tr>
+<tr><td>Throttle and battery details (twist throttle, removable battery)</td><td>2: STACYC, Hiboy</td><td>Spec table rows</td></tr>
+<tr><td>Shipping, returns and warranty terms in the copy</td><td>2: RevZilla, Hiboy</td><td>One trust line under the product grid and one FAQ</td></tr>
+<tr><td>Protective gear / helmet guidance</td><td>1: H-D</td><td>One FAQ</td></tr>
+</tbody></table></div>
+
+<h2>Rewritten elements (copy-paste)</h2>
+<div id="rewrites"></div>
+
+<h2>Fix list</h2>
+<div class="filters">
+  <input id="q" type="search" placeholder="Search checks…" aria-label="Search">
+  <select id="fStatus" aria-label="Status"><option value="">Any status</option><option>Open</option><option>In progress</option><option>Fixed</option><option>Not doing</option></select>
+  <select id="fSev" aria-label="Severity"><option value="">Any severity</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select>
+  <select id="fCat" aria-label="Category"><option value="">Any category</option><option>On-page</option><option>Content</option><option>Technical</option><option>AI readiness</option></select>
+  <select id="fOwner" aria-label="Owner"><option value="">Any owner</option><option>SEO</option><option>Content</option><option>Dev</option><option>Design</option></select>
+  <label><input id="fHide" type="checkbox"> Hide done</label>
+</div>
+<div class="tabs"><button id="tNeed" class="on">Needs work</button><button id="tPass">Passing</button></div>
+<div id="list"><div class="mut small">Loading findings…</div></div>
+
+<h2>Method and limits</h2>
+<div id="method" class="small"></div>
+
+<h2>Feedback for the next audit run</h2>
+<div class="small mut">Claude reads these notes the next time the audit runs.</div>
+<div id="fbwrap"><textarea id="fb" placeholder="What should change in the next run?"></textarea>
+<div class="ctl"><button class="copy" id="fbSend">Send note</button><span id="fbMsg" class="small mut"></span></div></div>
+<div id="fbList" class="small"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SEV={Critical:0,High:1,Medium:2,Low:3},EFF={S:0,M:1,L:2};
+const STATES=['Open','In progress','Fixed','Not doing'];
+let db=null,user=null,canWrite=null,readOnly=false,meId=null;
+let meta=null,findings=[],status={},feedback=[],names={};
+let tab='need',loaded={meta:false,findings:false,status:false};
+
+const REWRITES=[
+ ['Title tag (54 chars)','Electric Balance Bike for Kids, Ages 3–12 | Orion Moto'],
+ ['Meta description (158 chars)','Shop Orion Moto electric balance bikes for kids ages 3–12 in 12", 16", 20" and 24" sizes. Brushless hub motors, 3 speed modes and free US shipping. From $699.'],
+ ['H1 (new; the page has none)','Electric Balance Bikes for Kids Ages 3–12'],
+ ['Answer-first opening paragraph (55 words, place directly under the H1, above the product grid)','An electric balance bike is a pedal-free kids\' bike with a small battery-powered hub motor and a throttle, so children learn balance and throttle control before moving up to a dirt bike. Orion Moto electric balance bikes come in 12", 16", 20" and 24" sizes for riders ages 3–12, from $699 with free US shipping.'],
+ ['Heading changes: delete and demote first','DELETE / DEMOTE\n- "Your cart (0)" ×2 and "Your cart is empty" (H2 in the cart drawer): change to <p> or <div>\n- The 2 empty <h2></h2> tags\n- Duplicate product-card H3s: each of the 4 product titles renders twice; keep one H3 per card\n- Duplicate blog-card H3s: 9 posts each render twice (18 H3s); keep one, and cut the block to the 3 most relevant posts\n- "ORION ELECTRIC BALANCE BIKES" H2: merge into "Meet Our Electric Balance Bikes" (two H2s for one section)\n\nRENAME\n- "Shop Orion Moto\'s Electric Balance Bikes" → "Shop Electric Balance Bikes for Sale"\n- "Frequently Asked Questions" → "Electric Balance Bike FAQs"\n- "ESeries Parts" → "Electric Balance Bike Parts & Batteries"\n- "Orion Blog" → "Electric Balance Bike Guides"\n\nADD (2 new sections, the cap)\n- H2 "Compare Orion Electric Balance Bikes by Size" (table: wheel size, motor W, voltage, age range, rider weight limit, top speed per mode, run time, price), using data already on /pages/comparison-of-bikes\n- H2 "What Orion Parents Say" (3–5 verified reviews with star rating)\n\nADD inside the existing FAQ (no new section)\n- H3 "What is the weight limit on an electric balance bike for kids?"\n- H3 "Do Orion electric balance bikes ship free in the USA, and what is the warranty?"\n- H3 "Does my child need a helmet and gear?"\n- H3 "Does the bike arrive assembled?"']
+];
+
+function renderRewrites(){
+ $('rewrites').innerHTML=REWRITES.map((r,i)=>`<h3>${esc(r[0])} <button class="copy" data-i="${i}">Copy</button></h3><pre>${esc(r[1])}</pre>`).join('');
+ $('rewrites').querySelectorAll('button').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(REWRITES[b.dataset.i][1]);b.textContent='Copied'}catch(e){b.textContent='Select the text to copy'}setTimeout(()=>b.textContent='Copy',1500)});
+}
+
+function vClass(v){return v==='Not checked'?'NC':v}
+function stOf(id){return (status[id]&&status[id].state)||'Open'}
+function stClass(s){return 'st-'+s.split(' ')[0]}
+
+function renderMeta(){
+ if(!meta){$('meta').innerHTML='<div class="mut">Audit details not loaded yet.</div>';return}
+ const f=[['Client',meta.client],['Audited URL',`<a href="${esc(meta.url)}">${esc(meta.url)}</a>`],['Primary keyword',esc(meta.primary)],['Secondary keywords',esc((meta.secondary||[]).join('; '))],['Targeting scope',esc(meta.scope)],['Device',esc(meta.device)],['Current position',esc(meta.position)],['Audit date',esc(meta.date)]];
+ $('meta').innerHTML=f.map(([k,v])=>`<div><b>${k}</b>${k==='Audited URL'?v:v}</div>`).join('');
+ const s=meta.scores||{};
+ $('score').innerHTML=['On-page','Content','Technical','AI readiness'].map(k=>{const x=s[k]||{};return `<div><div class="mut small">${k}</div><div class="n">${x.score==null?'–':x.score}<span class="small mut">/100</span></div><div class="small mut">${x.fail??'–'} failed, ${x.warn??'–'} warn of ${x.checked??'–'} checked</div></div>`}).join('');
+ $('basis').textContent=meta.basis||'';
+ $('method').innerHTML=(meta.method||[]).map(p=>`<p>${esc(p)}</p>`).join('');
+}
+
+function renderProgress(){
+ const need=findings.filter(f=>f.verdict!=='Pass');
+ const c={};STATES.forEach(s=>c[s]=0);need.forEach(f=>c[stOf(f.id)]++);
+ const n=need.length||1;
+ const col={'Fixed':'var(--pass)','In progress':'var(--acc)','Not doing':'var(--nc)','Open':'var(--line)'};
+ $('prog').innerHTML=['Fixed','In progress','Not doing','Open'].map(s=>`<span style="width:${c[s]/n*100}%;background:${col[s]}" title="${s}: ${c[s]}"></span>`).join('');
+ const done=c['Fixed']+c['Not doing'];
+ $('progtxt').textContent=need.length?`${done} of ${need.length} resolved: ${c['Fixed']} fixed, ${c['In progress']} in progress, ${c['Open']} open, ${c['Not doing']} not doing. Passing checks aren't counted.`:'No findings loaded yet.';
+ $('tNeed').textContent=`Needs work (${need.length})`;
+ $('tPass').textContent=`Passing (${findings.length-need.length})`;
+}
+
+function sortF(a,b){return (SEV[a.severity]??9)-(SEV[b.severity]??9)||(EFF[a.effort]??9)-(EFF[b.effort]??9)||String(a.id).localeCompare(b.id)}
+
+function renderList(){
+ const q=$('q').value.toLowerCase(),fs=$('fStatus').value,fv=$('fSev').value,fc=$('fCat').value,fo=$('fOwner').value,hide=$('fHide').checked;
+ let rows=findings.filter(f=>tab==='need'?f.verdict!=='Pass':f.verdict==='Pass');
+ rows=rows.filter(f=>(!q||(f.check+' '+f.actual+' '+f.fix+' '+f.competitors).toLowerCase().includes(q))&&(!fv||f.severity===fv)&&(!fc||f.category===fc)&&(!fo||f.owner===fo));
+ if(tab==='need'){rows=rows.filter(f=>(!fs||stOf(f.id)===fs)&&(!hide||!['Fixed','Not doing'].includes(stOf(f.id))))}
+ rows.sort(sortF);
+ const openIds=new Set([...document.querySelectorAll('#list details[open]')].map(d=>d.dataset.id));
+ if(!rows.length){$('list').innerHTML=`<div class="mut small">${findings.length?'Nothing matches these filters.':'No findings in the database yet.'}</div>`;return}
+ $('list').className=readOnly?'ro':'';
+ $('list').innerHTML=rows.map(f=>{
+  const s=status[f.id]||{};const st=stOf(f.id);
+  const stamp=s.at?`Last changed ${new Date(s.at).toLocaleString()} by ${esc(names[s.by]||'Someone')}`:'Not changed yet';
+  return `<details class="row" data-id="${esc(f.id)}" ${openIds.has(f.id)?'open':''}><summary>
+   <span>${f.severity?`<span class="pill ${esc(f.severity)}">${esc(f.severity)}</span>`:''}</span>
+   <span><b>${esc(f.check)}</b></span>
+   <span class="mut hide-sm">${esc(f.category)}</span>
+   <span><span class="pill ${vClass(f.verdict)}">${esc(f.verdict)}</span></span>
+   <span class="mut hide-sm">${esc(f.effort||'')}</span>
+   <span class="mut hide-sm">${esc(f.owner||'')}</span>
+   <span class="hide-sm">${tab==='need'?`<span class="pill ${stClass(st)}">${esc(st)}</span>`:''}</span>
+  </summary><div class="body">
+   <p><b>What we found:</b> ${esc(f.actual)}</p>
+   <p><b>Competitors:</b> ${esc(f.competitors)}</p>
+   ${f.fix?`<p><b>Fix:</b> ${esc(f.fix)}</p>`:''}
+   ${tab==='need'?`<div class="ctl">
+     <label>Status <select data-k="state" data-id="${esc(f.id)}" ${readOnly?'disabled':''}>${STATES.map(x=>`<option ${x===st?'selected':''}>${x}</option>`).join('')}</select></label>
+     <label>Owner <input data-k="owner" data-id="${esc(f.id)}" value="${esc(s.owner||'')}" placeholder="${esc(f.owner||'')}" ${readOnly?'disabled':''} size="12"></label>
+     <span class="small mut">${stamp}</span></div>
+     <div class="ctl" style="display:block"><textarea data-k="note" data-id="${esc(f.id)}" placeholder="Notes" ${readOnly?'disabled':''}>${esc(s.note||'')}</textarea></div>`:''}
+  </div></details>`}).join('');
+}
+
+function render(){renderMeta();renderProgress();renderList()}
+
+// writes: one at a time per doc, debounced notes
+const queues={},timers={};
+function writeStatus(id,patch){
+ if(readOnly||!db)return;
+ const cur=status[id]||{};
+ if(Object.keys(patch).every(k=>(cur[k]||'')===patch[k]))return;
+ const body={state:cur.state||'Open',owner:cur.owner||'',note:cur.note||'',...patch,by:meId||'',at:new Date().toISOString()};
+ status[id]=body;
+ queues[id]=(queues[id]||Promise.resolve()).then(()=>db.doc('status/'+id).set(body)).catch(e=>{if(e&&e.code==='invalid_argument'){setReadOnly('Your access level can\'t update the tracker, so it is read-only for this visit.')}else{note('A change could not be saved: '+(e&&e.message||'unknown error'))}});
+}
+$('list').addEventListener('change',e=>{const t=e.target;if(t.dataset.k==='state'||t.dataset.k==='owner'){writeStatus(t.dataset.id,{[t.dataset.k]:t.value});if(t.dataset.k==='state')renderProgress()}});
+$('list').addEventListener('input',e=>{const t=e.target;if(t.dataset.k==='note'){const id=t.dataset.id;clearTimeout(timers[id]);timers[id]=setTimeout(()=>writeStatus(id,{note:t.value}),900)}});
+['q','fStatus','fSev','fCat','fOwner','fHide'].forEach(i=>$(i).addEventListener('input',renderList));
+$('tNeed').onclick=()=>{tab='need';$('tNeed').classList.add('on');$('tPass').classList.remove('on');renderList()};
+$('tPass').onclick=()=>{tab='pass';$('tPass').classList.add('on');$('tNeed').classList.remove('on');renderList()};
+
+function note(t){$('notice').hidden=false;$('notice').textContent=t}
+function setReadOnly(t){readOnly=true;note(t);$('fb').disabled=true;$('fbSend').disabled=true;renderList()}
+
+$('fbSend').onclick=async()=>{
+ const v=$('fb').value.trim();if(!v||!db||readOnly)return;
+ $('fbSend').disabled=true;
+ try{await db.collection('feedback').add({text:v,by:meId||'',at:new Date().toISOString()});$('fb').value='';$('fbMsg').textContent='Saved.'}
+ catch(e){if(e&&e.code==='invalid_argument')setReadOnly('Your access level can\'t write to the tracker, so it is read-only for this visit.');else $('fbMsg').textContent='Not saved: '+(e&&e.message||'error')}
+ if(!readOnly)$('fbSend').disabled=false;
+};
+function renderFeedback(){$('fbList').innerHTML=feedback.slice().sort((a,b)=>String(b.at).localeCompare(String(a.at))).map(f=>`<p><b>${esc(names[f.by]||'Someone')}</b> <span class="mut">${f.at?new Date(f.at).toLocaleString():''}</span><br>${esc(f.text)}</p>`).join('')}
+
+async function resolveNames(){
+ if(!user||!user.profiles)return;
+ const ids=[...new Set([...Object.values(status).map(s=>s.by),...feedback.map(f=>f.by)].filter(Boolean))];
+ if(!ids.length)return;
+ try{const ps=await user.profiles(ids);ids.forEach(i=>{names[i]=(ps&&ps[i]&&ps[i].name)||''});renderList();renderFeedback()}catch(e){}
+}
+
+renderRewrites();render();
+(async()=>{
+ const timer=setTimeout(()=>{if(!(loaded.meta&&loaded.findings))note('The tracker data can\'t be reached yet, so what you see may be out of date.')},10000);
+ try{db=await claude.use('db');user=await claude.use('user')}catch(e){}
+ if(!db){clearTimeout(timer);note('The tracker database isn\'t available here. Sign in to claude.ai to see the findings.');setReadOnly($('notice').textContent);return}
+ try{meId=user?await user.id():null}catch(e){}
+ try{canWrite=user&&user.can?await user.can('data.write'):null}catch(e){canWrite=null}
+ if(canWrite===false)setReadOnly('Read-only: you need Contributor access or higher to update status, owners and notes.');
+ const done=()=>{if(loaded.meta&&loaded.findings){clearTimeout(timer);if(!readOnly)$('notice').hidden=true}};
+ db.doc('meta/audit').onSnapshot(s=>{meta=s.exists?s.data():null;if(!s.metadata.fromCache){loaded.meta=true;done()}renderMeta()},e=>{loaded.meta=true;note('Audit details could not load: '+e.message)});
+ db.collection('findings').onSnapshot(s=>{findings=s.docs.map(d=>({id:d.id,...d.data()}));if(!s.metadata.fromCache){loaded.findings=true;done()}renderProgress();renderList()},e=>{loaded.findings=true;note('Findings could not load: '+e.message)});
+ db.collection('status').onSnapshot(s=>{const n={};s.docs.forEach(d=>n[d.id]=d.data());status=n;renderProgress();
+   if(!document.activeElement||!document.activeElement.dataset||!document.activeElement.dataset.k)renderList();resolveNames()},e=>{});
+ db.collection('feedback').onSnapshot(s=>{feedback=s.docs.map(d=>d.data());renderFeedback();resolveNames()},e=>{});
+})();
+</script>
+</body>
+</html>
