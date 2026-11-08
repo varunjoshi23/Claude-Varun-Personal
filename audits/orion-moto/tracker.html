@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orion Moto: electric balance bikes page SEO audit</title>
+<style>
+:root{
+  --bg:#faf9f7; --panel:#fff; --fg:#1f1e1d; --muted:#6b6a67; --line:#e5e3df;
+  --bad:#b4332a; --warn:#9a6b10; --ok:#2f6f45; --info:#2f5a8a; --accent:#1f1e1d;
+  --radius:10px; --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#1a1917;--panel:#232220;--fg:#edeae4;--muted:#a3a09a;--line:#36343048;
+  --bad:#e88b80;--warn:#e0b45c;--ok:#7fc49a;--info:#8fb4e0;--accent:#edeae4;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:22px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13px;margin:0 0 20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.grid{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.lab{font-size:12px;color:var(--muted)}
+.big{font-size:28px;font-weight:600;letter-spacing:-.02em;margin:2px 0 6px;font-variant-numeric:tabular-nums}
+.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:99px;background:var(--ok);transition:width .4s ease}
+.b-bad{background:var(--bad)!important}.b-warn{background:var(--warn)!important}
+.bar{margin:14px 0 8px}.bar .meter{height:12px}
+.pcount{font-size:13px;color:var(--muted);margin-top:8px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip{font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+input,select,textarea,button{font:inherit;color:var(--fg)}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+input[type=search]{flex:1 1 200px;min-width:160px}
+textarea{width:100%;resize:vertical;min-height:58px}
+button{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+button:hover{border-color:var(--muted)}
+button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.scorecard{cursor:pointer;transition:border-color .15s}
+.scorecard:hover{border-color:var(--muted)}
+.scorecard.on{border-color:var(--fg);box-shadow:0 0 0 1px var(--fg) inset}
+.tabs{display:flex;gap:4px;margin:26px 0 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tab{background:none;border:none;border-bottom:2px solid transparent;border-radius:0;padding:10px 16px;color:var(--muted);font-weight:500;font-size:15px;cursor:pointer}
+.tab:hover{color:var(--fg)}
+.tab.on{color:var(--fg);border-bottom-color:var(--fg)}
+.tab b{font-weight:500;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);margin-left:4px}
+.sechead{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+.sechead .meter{flex:1 1 200px;max-width:340px}
+.sechead .lab{font-size:13px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.blk{margin-top:26px}
+.blk h2{font-size:15px;font-weight:600;margin:0 0 8px;display:flex;align-items:baseline;gap:8px}
+.blk h2 span{font-size:12px;font-weight:400;color:var(--muted)}
+.blk .intro{color:var(--muted);font-size:13px;margin:-2px 0 10px}
+.tw{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tscroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+thead th{border-top:none;font-weight:500;color:var(--muted);font-size:12px;background:rgba(127,127,127,.04)}
+tr.row{cursor:pointer}
+tr.row:hover td{background:rgba(127,127,127,.04)}
+tr.row.done td{opacity:.6}
+tr.detail td{background:rgba(127,127,127,.03);border-top:none;padding:4px 16px 16px}
+td.id{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+td.nw{white-space:nowrap}
+.issue{font-weight:500}
+.ai{font-size:10px;font-family:var(--mono);color:var(--info);border:1px solid var(--info);border-radius:4px;padding:0 4px;margin-left:6px;vertical-align:1px}
+.pill{font-size:11px;padding:2px 8px;border-radius:99px;white-space:nowrap;display:inline-block}
+.p-Critical{background:var(--bad);color:var(--panel)}
+.p-High{color:var(--bad);border:1px solid var(--bad)}
+.p-Medium{color:var(--warn);border:1px solid var(--warn)}
+.p-Low{color:var(--muted);border:1px solid var(--line)}
+.v-Fail{color:var(--bad)}.v-Warn{color:var(--warn)}
+.st{font-size:12px;white-space:nowrap}
+.fld{margin-top:10px}.fld .lab{margin-bottom:3px}
+.txt{font-size:13px;white-space:pre-wrap}
+.ctrls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.stamp{font-size:11px;color:var(--muted);margin-top:6px}
+.note{background:rgba(127,127,127,.07);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13px;margin:16px 0}
+.empty{color:var(--muted);padding:20px;text-align:center;font-size:13px}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+.hide{display:none!important}
+details.pass>summary{cursor:pointer;list-style:none;font-size:15px;font-weight:600;margin-bottom:8px}
+details.pass>summary::-webkit-details-marker{display:none}
+details.pass>summary:before{content:"▸ ";color:var(--muted)}
+details.pass[open]>summary:before{content:"▾ "}
+details.pass>summary span{font-size:12px;font-weight:400;color:var(--muted)}
+/* outline */
+.ol-row{display:grid;grid-template-columns:38px 1fr auto;gap:10px;padding:10px 14px;border-top:1px solid var(--line);align-items:start}
+.ol-row:first-child{border-top:none}
+.ol-row.l3{padding-left:34px}.ol-row.l4{padding-left:54px}
+.tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px;text-align:center}
+.ol-h{font-weight:500}
+.ol-new{font-size:13px;margin-top:2px}
+.ol-rec{font-size:13px;color:var(--muted);margin-top:3px}
+.a-Keep{color:var(--ok);border:1px solid var(--ok)}
+.a-Modify{color:var(--warn);border:1px solid var(--warn)}
+.a-Remove{color:var(--bad);border:1px solid var(--bad)}
+.a-Add{color:var(--info);border:1px solid var(--info)}
+.ol-row.rm .ol-h{text-decoration:line-through;color:var(--muted)}
+.ol-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.ol-filter button{font-size:12px;padding:4px 10px}
+.ol-filter button.on{border-color:var(--fg)}
+/* rewrites */
+.rw{margin-bottom:14px}.rw:last-child{margin-bottom:0}
+.rw .lab{margin-bottom:4px}
+.rw .before{font-size:12px;color:var(--muted);margin-bottom:4px}
+.code{position:relative;font-family:var(--mono);font-size:12.5px;white-space:pre-wrap;word-break:break-word;background:rgba(127,127,127,.07);border:1px solid var(--line);border-radius:8px;padding:10px 74px 10px 10px}
+.code.long{max-height:260px;overflow:auto}
+.code button{position:absolute;top:6px;right:6px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;padding:3px 9px}
+tr.client td{font-weight:500}
+td.behind{color:var(--bad)}
+.gap{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+.gap:first-child{border-top:none}
+.gap .n{font-variant-numeric:tabular-nums;font-weight:600}
+.method p{margin:0 0 8px;font-size:13px}
+.foot{margin-top:40px;padding-top:6px;border-top:1px solid var(--line)}
+@media (max-width:700px){.hm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="htitle">Page SEO audit</h1>
+  <p class="sub" id="sub">Fix tracker. Loading audit details.</p>
+  <div id="banner" class="note hide"></div>
+
+
+  <div class="card">
+    <div class="lab">Overall progress</div>
+    <div class="bar"><div class="meter"><i id="pbar"></i></div></div>
+    <div class="pcount" id="pcount">Loading</div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div class="grid g3" id="scores" style="margin-top:12px"></div>
+  <p class="lab" id="basis" style="margin-top:8px"></p>
+
+  <div class="tabs" id="tabs"></div>
+  <div class="sechead" id="sechead"></div>
+
+  <div class="toolbar" id="toolbar">
+    <input type="search" id="q" placeholder="Search this section">
+    <select id="fstatus"><option value="">All statuses</option><option>Open</option><option>In progress</option><option>Fixed</option><option>Not doing</option></select>
+    <select id="fsev"><option value="">All severities</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select>
+    <select id="fown"><option value="">All owners</option><option>SEO</option><option>Content</option><option>Dev</option><option>Design</option></select>
+    <button id="hidedone">Hide done</button>
+    <input id="me" placeholder="Your name" style="flex:0 1 150px">
+  </div>
+
+  <div class="blk" id="bissues"><h2>Issues to resolve <span id="cissues"></span></h2><div class="tw"><div class="tscroll" id="tissues"><div class="empty">Loading</div></div></div></div>
+  <div class="blk" id="bnc"><h2>Not checked <span id="cnc"></span></h2><p class="intro">Checks that could not be run in this audit, with how to run them.</p><div class="tw"><div class="tscroll" id="tnc"></div></div></div>
+  <div class="blk" id="bextra"></div>
+  <div class="blk" id="bpass"><details class="pass" id="dpass"><summary>Checks passed <span id="cpass"></span></summary><div class="tw"><div class="tscroll" id="tpass"></div></div></details></div>
+
+  <div class="foot">
+    <div class="blk"><h2>Method and limits</h2><div class="card method" id="method"><div class="empty">Loading</div></div></div>
+    <div class="blk">
+      <h2>Send a note to Claude</h2>
+      <div class="card">
+        <p class="lab" style="margin-top:0">Anything you want re-checked, re-scored or rewritten. I read these when you ask me to pick the tracker back up.</p>
+        <textarea id="fbtext" placeholder="For example: we changed the title tag, re-run the on-page checks."></textarea>
+        <div class="ctrls"><button class="primary" id="fbsend">Send</button><span class="st" id="fbmsg" style="color:var(--muted)"></span></div>
+        <div id="fblist" style="margin-top:14px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var SECTIONS = [{key: 'competitors', name: 'Competitor comparison', ref: true}, {key: 'technical', name: 'Technical'}, {key: 'on-page', name: 'On-page'}, {key: 'content', name: 'Content'}];
+  var STATES = ['Open', 'In progress', 'Fixed', 'Not doing'];
+  var OWNERS = ['SEO', 'Content', 'Dev', 'Design'];
+  var db = null, uid = null, canWrite = false, myName = '';
+  var findings = {}, status = {}, meta = {}, feedback = [];
+  var openIds = {}, loaded = false, timer = null, hideDone = false, olFilter = '';
+  var cur = 'competitors';
+
+  var el = function (id) { return document.getElementById(id); };
+  function mk(tag, cls, text) { var d = document.createElement(tag); if (cls) d.className = cls; if (text !== undefined && text !== null) d.textContent = String(text); return d; }
+  function banner(msg, show) { var b = el('banner'); b.textContent = msg || ''; b.classList.toggle('hide', !show); }
+  function secName(k) { for (var i = 0; i < SECTIONS.length; i++) if (SECTIONS[i].key === k) return SECTIONS[i].name; return ''; }
+  function stateOf(id) { return (status[id] && status[id].state) || 'Open'; }
+  function ownerOf(id) { if (status[id] && status[id].owner) return status[id].owner; return findings[id] ? findings[id].owner : ''; }
+  function isDone(id) { var s = stateOf(id); return s === 'Fixed' || s === 'Not doing'; }
+  function inSec(f, k) { return f.category === secName(k); }
+  function all() { return Object.keys(findings).map(function (k) { return findings[k]; }); }
+  var SV = {Critical: 0, High: 1, Medium: 2, Low: 3}, EF = {S: 0, M: 1, L: 2};
+  function bySev(a, b) { return (SV[a.severity] - SV[b.severity]) || (EF[a.effort] - EF[b.effort]) || a.id.localeCompare(b.id); }
+  function scoreOf(k) {
+    var w = {Pass: 1, Warn: .5, Fail: 0};
+    var xs = all().filter(function (f) { return inSec(f, k) && f.verdict !== 'Not checked'; });
+    if (!xs.length) return null;
+    var s = 0; xs.forEach(function (f) { s += w[f.verdict] || 0; });
+    return {score: Math.round(100 * s / xs.length), checked: xs.length, need: xs.filter(function (f) { return f.verdict !== 'Pass'; }).length};
+  }
+
+  function route() {
+    var h = (location.hash || '').replace('#', '');
+    if (SECTIONS.some(function (s) { return s.key === h; })) cur = h;
+  }
+  function go(k) { cur = k; openIds = {}; try { history.replaceState(null, '', '#' + k); } catch (e) { location.hash = k; } renderAll(); }
+  window.addEventListener('hashchange', function () { route(); openIds = {}; renderAll(); });
+
+  function renderTop() {
+    var a = meta.audit;
+    if (a) {
+      el('htitle').textContent = a.client + ': ' + (a.pageLabel || 'page') + ' audit';
+      el('sub').textContent = 'Fix tracker for ' + a.url + '. ' + a.scope + ' targeting, primary keyword "' + a.keyword + '". ' + a.device + '. Audited ' + a.date + '. Position: ' + a.position + '.';
+      el('basis').textContent = a.basis || '';
+      var m = el('method'); m.innerHTML = '';
+      (a.method || []).forEach(function (p) { m.appendChild(mk('p', '', p)); });
+    }
+    var work = all().filter(function (f) { return f.verdict === 'Fail' || f.verdict === 'Warn'; });
+    var done = work.filter(function (f) { return stateOf(f.id) === 'Fixed'; }).length;
+    var prog = work.filter(function (f) { return stateOf(f.id) === 'In progress'; }).length;
+    var skip = work.filter(function (f) { return stateOf(f.id) === 'Not doing'; }).length;
+    var pct = work.length ? Math.round(done / work.length * 100) : 0;
+    el('pbar').style.width = pct + '%';
+    el('pbar').className = pct >= 67 ? '' : (pct >= 34 ? 'b-warn' : 'b-bad');
+    el('pcount').textContent = work.length ? (done + ' of ' + work.length + ' issues fixed across all sections (' + pct + '%). Passed and not-checked items are excluded.') : (loaded ? 'No issues stored yet.' : 'Loading');
+    el('chips').innerHTML = '';
+    [['Open', work.length - done - prog - skip], ['In progress', prog], ['Fixed', done], ['Not doing', skip]].forEach(function (p) { el('chips').appendChild(mk('span', 'chip', p[0] + ' ' + p[1])); });
+
+    el('scores').innerHTML = ''; el('tabs').innerHTML = '';
+    SECTIONS.forEach(function (s) {
+      if (s.ref) {
+        var rt = mk('button', 'tab' + (cur === s.key ? ' on' : ''), s.name);
+        var nComp = meta.competitors && meta.competitors.rows ? meta.competitors.rows.length - 1 : 0;
+        if (nComp) rt.appendChild(mk('b', '', nComp + ' competitors'));
+        rt.addEventListener('click', function () { go(s.key); });
+        el('tabs').appendChild(rt);
+        return;
+      }
+      var sc = scoreOf(s.key);
+      var issues = all().filter(function (f) { return inSec(f, s.key) && (f.verdict === 'Fail' || f.verdict === 'Warn'); });
+      var open = issues.filter(function (f) { return !isDone(f.id); }).length;
+      var d = mk('div', 'card scorecard' + (cur === s.key ? ' on' : ''));
+      d.appendChild(mk('div', 'lab', s.name));
+      d.appendChild(mk('div', 'big', sc ? sc.score : '–'));
+      var mtr = mk('div', 'meter'); var i = mk('i', sc ? (sc.score < 40 ? 'b-bad' : (sc.score < 70 ? 'b-warn' : '')) : ''); i.style.width = (sc ? sc.score : 0) + '%'; mtr.appendChild(i); d.appendChild(mtr);
+      var l = mk('div', 'lab', sc ? (open + ' open issues · ' + sc.need + ' need work of ' + sc.checked + ' checked') : ''); l.style.marginTop = '6px'; d.appendChild(l);
+      d.addEventListener('click', function () { go(s.key); });
+      el('scores').appendChild(d);
+      var t = mk('button', 'tab' + (cur === s.key ? ' on' : ''), s.name);
+      t.appendChild(mk('b', '', open + ' open'));
+      t.addEventListener('click', function () { go(s.key); });
+      el('tabs').appendChild(t);
+    });
+  }
+
+  function renderSecHead() {
+    var h = el('sechead'); h.innerHTML = '';
+    var issues = all().filter(function (f) { return inSec(f, cur) && (f.verdict === 'Fail' || f.verdict === 'Warn'); });
+    if (!issues.length) return;
+    var fixed = issues.filter(function (f) { return stateOf(f.id) === 'Fixed'; }).length;
+    var pct = Math.round(fixed / issues.length * 100);
+    h.appendChild(mk('div', 'lab', secName(cur) + ': ' + fixed + ' of ' + issues.length + ' issues fixed'));
+    var m = mk('div', 'meter'); var i = mk('i', pct >= 67 ? '' : (pct >= 34 ? 'b-warn' : 'b-bad')); i.style.width = pct + '%'; m.appendChild(i); h.appendChild(m);
+  }
+
+  function filt(rows, tracked) {
+    var q = el('q').value.toLowerCase(), fs = el('fstatus').value, fv = el('fsev').value, fo = el('fown').value;
+    return rows.filter(function (f) {
+      if (tracked && fs && stateOf(f.id) !== fs) return false;
+      if (fv && f.severity !== fv) return false;
+      if (fo && ownerOf(f.id) !== fo) return false;
+      if (tracked && hideDone && isDone(f.id)) return false;
+      if (!q) return true;
+      var s = ''; for (var k in f) s += ' ' + f[k];
+      s += ' ' + ((status[f.id] && status[f.id].note) || '');
+      return s.toLowerCase().indexOf(q) > -1;
+    });
+  }
+
+  function issueTable(box, rows, mode) {
+    box.innerHTML = '';
+    if (!rows.length) { box.appendChild(mk('div', 'empty', loaded ? (mode === 'nc' ? 'Nothing left unchecked in this section.' : 'Nothing matches these filters.') : 'Loading')); return; }
+    var t = mk('table'), th = mk('thead'), hr = mk('tr');
+    ['ID', 'Severity', mode === 'nc' ? 'Check' : 'Issue', 'Effort', 'Owner', 'Status'].forEach(function (c, i) { hr.appendChild(mk('th', (i === 0 || i === 3 || i === 4) ? 'hm' : '', c)); });
+    th.appendChild(hr); t.appendChild(th);
+    var tb = mk('tbody');
+    rows.forEach(function (f) {
+      var st = stateOf(f.id), s = status[f.id] || {};
+      var tr = mk('tr', 'row' + (isDone(f.id) ? ' done' : ''));
+      tr.appendChild(mk('td', 'id hm', f.id));
+      var sv = mk('td', 'nw'); sv.appendChild(mk('span', 'pill p-' + f.severity, f.severity)); tr.appendChild(sv);
+      var it = mk('td');
+      var nm = mk('span', 'issue', f.check); it.appendChild(nm);
+      if (f.ai) it.appendChild(mk('span', 'ai', 'AI'));
+      if (mode !== 'nc') it.appendChild(mk('div', 'lab v-' + f.verdict, f.verdict));
+      tr.appendChild(it);
+      tr.appendChild(mk('td', 'nw hm', f.effort));
+      tr.appendChild(mk('td', 'nw hm', ownerOf(f.id) || 'Unassigned'));
+      tr.appendChild(mk('td', 'st ' + (st === 'Fixed' ? 'ok' : (st === 'In progress' ? 'warn' : '')), st));
+      tr.addEventListener('click', function () { openIds[f.id] = !openIds[f.id]; renderSection(); });
+      tb.appendChild(tr);
+      if (openIds[f.id]) {
+        var dr = mk('tr', 'detail'), td = mk('td'); td.colSpan = 6;
+        [['What is on the page now', f.actual], ['Competitor pattern', f.competitors], [mode === 'nc' ? 'How to check it' : 'Fix', f.fix]].forEach(function (p) {
+          if (!p[1] || p[1] === 'n/a') return;
+          var w = mk('div', 'fld'); w.appendChild(mk('div', 'lab', p[0])); w.appendChild(mk('div', 'txt', p[1])); td.appendChild(w);
+        });
+        var ctrls = mk('div', 'ctrls');
+        var ss = mk('select'); STATES.forEach(function (v) { var o = mk('option', '', v); o.value = v; ss.appendChild(o); });
+        ss.value = st; ss.disabled = !canWrite; ss.addEventListener('change', function () { save(f.id, {state: ss.value}); });
+        var os = mk('select'); var bl = mk('option', '', 'Unassigned'); bl.value = ''; os.appendChild(bl);
+        OWNERS.forEach(function (v) { var o = mk('option', '', v); o.value = v; os.appendChild(o); });
+        os.value = ownerOf(f.id) || ''; os.disabled = !canWrite; os.addEventListener('change', function () { save(f.id, {owner: os.value}); });
+        ctrls.appendChild(ss); ctrls.appendChild(os); td.appendChild(ctrls);
+        var nw = mk('div', 'fld'); nw.appendChild(mk('div', 'lab', 'Notes, what changed, blockers'));
+        var na = mk('textarea'); na.value = s.note || ''; na.disabled = !canWrite; na.placeholder = canWrite ? 'Add a note' : 'Read only';
+        na.setAttribute('data-note', f.id);
+        var tid = null; na.addEventListener('input', function () { clearTimeout(tid); tid = setTimeout(function () { save(f.id, {note: na.value}, true); }, 900); });
+        nw.appendChild(na); td.appendChild(nw);
+        if (s.at) td.appendChild(mk('div', 'stamp', 'Last change ' + (s.byName || 'someone') + ', ' + new Date(s.at).toLocaleString()));
+        dr.appendChild(td); tb.appendChild(dr);
+      }
+    });
+    t.appendChild(tb); box.appendChild(t);
+  }
+
+  function passTable(box, rows) {
+    box.innerHTML = '';
+    if (!rows.length) { box.appendChild(mk('div', 'empty', 'No passed checks in this section.')); return; }
+    var t = mk('table'), th = mk('thead'), hr = mk('tr');
+    ['ID', 'Check', 'What we found'].forEach(function (c, i) { hr.appendChild(mk('th', i === 0 ? 'hm' : '', c)); });
+    th.appendChild(hr); t.appendChild(th);
+    var tb = mk('tbody');
+    rows.forEach(function (f) {
+      var tr = mk('tr');
+      tr.appendChild(mk('td', 'id hm', f.id));
+      var c = mk('td'); c.appendChild(mk('span', 'issue', f.check)); if (f.ai) c.appendChild(mk('span', 'ai', 'AI')); c.appendChild(mk('div', 'lab ok', 'Pass')); tr.appendChild(c);
+      var w = mk('td', 'txt'); w.textContent = f.actual + ((f.fix && f.fix !== 'No change.') ? '\n' + f.fix : ''); tr.appendChild(w);
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb); box.appendChild(t);
+  }
+
+  function rewritesBlock(sec) {
+    var r = meta.rewrites; if (!r || !r.blocks) return null;
+    var bs = r.blocks.filter(function (b) { return b.section === sec; });
+    if (!bs.length) return null;
+    var wrap = mk('div', 'blk');
+    var h = mk('h2', '', 'Rewritten elements'); h.appendChild(mk('span', '', 'copy-paste ready')); wrap.appendChild(h);
+    var card = mk('div', 'card');
+    bs.forEach(function (b) {
+      var w = mk('div', 'rw');
+      w.appendChild(mk('div', 'lab', b.label));
+      if (b.before) w.appendChild(mk('div', 'before', 'Now: ' + b.before));
+      var c = mk('div', 'code' + (b.text.length > 600 ? ' long' : ''), b.text);
+      var btn = mk('button', '', 'Copy');
+      btn.addEventListener('click', function () {
+        try { navigator.clipboard.writeText(b.text).then(function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1400); }, function () { btn.textContent = 'Select and copy'; }); }
+        catch (e) { btn.textContent = 'Select and copy'; }
+      });
+      c.appendChild(btn); w.appendChild(c); card.appendChild(w);
+    });
+    wrap.appendChild(card); return wrap;
+  }
+
+  function outlineBlock() {
+    var o = meta.outline; if (!o || !o.items) return null;
+    var wrap = mk('div', 'blk');
+    var h = mk('h2', '', 'Content outline'); h.appendChild(mk('span', '', o.items.length + ' headings, in page order')); wrap.appendChild(h);
+    wrap.appendChild(mk('p', 'intro', 'Every heading in the order it appears on the live page, with what to do with it. New items are shown where they should go.'));
+    var counts = {}; o.items.forEach(function (x) { counts[x.action] = (counts[x.action] || 0) + 1; });
+    var fb = mk('div', 'ol-filter');
+    [['', 'All ' + o.items.length]].concat(['Keep', 'Modify', 'Remove', 'Add New'].map(function (a) { return [a, a + ' ' + (counts[a] || 0)]; })).forEach(function (p) {
+      var b = mk('button', olFilter === p[0] ? 'on' : '', p[1]);
+      b.addEventListener('click', function () { olFilter = p[0]; renderSection(); });
+      fb.appendChild(b);
+    });
+    wrap.appendChild(fb);
+    var box = mk('div', 'card'); box.style.padding = '0';
+    o.items.filter(function (x) { return !olFilter || x.action === olFilter; }).forEach(function (x) {
+      var lvl = parseInt(String(x.tag).replace(/\D/g, ''), 10) || 2;
+      var r = mk('div', 'ol-row l' + Math.min(lvl, 4) + (x.action === 'Remove' ? ' rm' : ''));
+      r.appendChild(mk('div', 'tag', x.tag));
+      var mid = mk('div'); mid.appendChild(mk('div', 'ol-h', x.text));
+      if (x.new) { var n = mk('div', 'ol-new'); n.appendChild(mk('span', 'lab', 'New heading: ')); n.appendChild(document.createTextNode(x.new)); mid.appendChild(n); }
+      mid.appendChild(mk('div', 'ol-rec', x.rec)); r.appendChild(mid);
+      var p = mk('div'); p.appendChild(mk('span', 'pill a-' + x.action.split(' ')[0], x.action)); r.appendChild(p);
+      box.appendChild(r);
+    });
+    wrap.appendChild(box); return wrap;
+  }
+
+  function compBlock() {
+    var c = meta.competitors; if (!c) return null;
+    var wrap = mk('div', 'blk');
+    wrap.appendChild(mk('p', 'intro', 'Who ranks for the primary keyword, and how the page compares.'));
+    var tw = mk('div', 'tw'), sc = mk('div', 'tscroll'), t = mk('table'), th = mk('thead'), hr = mk('tr');
+    c.cols.forEach(function (x) { hr.appendChild(mk('th', '', x)); }); th.appendChild(hr); t.appendChild(th);
+    var tb = mk('tbody');
+    c.rows.forEach(function (r) { var tr = mk('tr', r.client ? 'client' : ''); r.cells.forEach(function (v, i) { tr.appendChild(mk('td', (r.client && c.behind && c.behind[i] ? 'behind' : '') + (i < 2 ? ' nw' : ''), v)); }); tb.appendChild(tr); });
+    t.appendChild(tb); sc.appendChild(t); tw.appendChild(sc); wrap.appendChild(tw);
+    var n = mk('p', 'lab', (c.note || '').replace('marked in orange', 'marked in red')); n.style.marginTop = '8px'; wrap.appendChild(n);
+    return wrap;
+  }
+
+  function renderSection() {
+    var isRef = cur === 'competitors';
+    ['toolbar', 'bissues', 'bpass', 'sechead'].forEach(function (id) { el(id).classList.toggle('hide', isRef); });
+    if (isRef) {
+      el('bnc').classList.add('hide');
+      var exr = el('bextra'); exr.innerHTML = '';
+      var cb = compBlock();
+      if (cb) { cb.style.marginTop = '0'; exr.appendChild(cb); } else exr.appendChild(mk('div', 'empty', loaded ? 'No comparison stored yet.' : 'Loading'));
+      return;
+    }
+    var focused = document.activeElement, fid = focused && focused.getAttribute && focused.getAttribute('data-note');
+    var rows = all().filter(function (f) { return inSec(f, cur); }).sort(bySev);
+    var issues = rows.filter(function (f) { return f.verdict === 'Fail' || f.verdict === 'Warn'; });
+    var nc = rows.filter(function (f) { return f.verdict === 'Not checked'; });
+    var pass = rows.filter(function (f) { return f.verdict === 'Pass'; });
+    var fi = filt(issues, true), fn = filt(nc, true), fp = filt(pass, false);
+    el('cissues').textContent = fi.length === issues.length ? issues.length : (fi.length + ' of ' + issues.length);
+    issueTable(el('tissues'), fi, 'work');
+    el('bnc').classList.toggle('hide', !nc.length);
+    el('cnc').textContent = nc.length;
+    issueTable(el('tnc'), fn, 'nc');
+    el('cpass').textContent = fp.length === pass.length ? pass.length : (fp.length + ' of ' + pass.length);
+    passTable(el('tpass'), fp);
+    var ex = el('bextra'); ex.innerHTML = '';
+    var parts = [rewritesBlock(cur)];
+    if (cur === 'content') parts = parts.concat([outlineBlock()]);
+    parts.forEach(function (p) { if (p) { p.style.marginTop = ex.childNodes.length ? '26px' : '0'; ex.appendChild(p); } });
+    el('q').placeholder = 'Search ' + secName(cur);
+    renderSecHead();
+    if (fid) { var a = document.querySelector('textarea[data-note="' + fid + '"]'); if (a) { a.focus(); a.setSelectionRange(a.value.length, a.value.length); } }
+  }
+
+  function renderAll() { renderTop(); renderSection(); }
+
+  var queue = Promise.resolve();
+  function save(id, patch, quiet) {
+    if (!db || !canWrite) return;
+    var c = status[id] || {};
+    var base = {state: c.state || 'Open', owner: c.owner || (findings[id] ? findings[id].owner : ''), note: c.note || ''};
+    var next = {
+      state: patch.state !== undefined ? patch.state : base.state,
+      owner: patch.owner !== undefined ? patch.owner : base.owner,
+      note: patch.note !== undefined ? patch.note : base.note,
+      by: uid || '', byName: myName || 'someone', at: new Date().toISOString()
+    };
+    if (c.at && next.state === base.state && next.owner === base.owner && next.note === base.note) return;
+    if (!c.at && next.state === 'Open' && next.owner === base.owner && next.note === '') return;
+    status[id] = next;
+    if (!quiet) renderAll();
+    queue = queue.then(function () {
+      return db.doc('status/' + id).set(next).catch(function (e) {
+        if (e && e.code === 'invalid_argument') { canWrite = false; banner('Your access to this tracker is read only. Ask the owner for Contributor access to update statuses.', true); renderAll(); }
+      });
+    });
+  }
+
+  function sendFeedback() {
+    if (!db || !canWrite) { el('fbmsg').textContent = 'Read only access.'; return; }
+    var t = el('fbtext').value.trim(); if (!t) return;
+    el('fbmsg').textContent = 'Sending';
+    db.collection('feedback').add({text: t, section: secName(cur), by: uid || '', byName: myName || 'someone', at: new Date().toISOString()})
+      .then(function () { el('fbtext').value = ''; el('fbmsg').textContent = 'Sent.'; setTimeout(function () { el('fbmsg').textContent = ''; }, 2500); })
+      .catch(function () { el('fbmsg').textContent = 'Could not send.'; });
+  }
+  function renderFeedback() {
+    var w = el('fblist'); w.innerHTML = '';
+    feedback.slice().sort(function (a, b) { return (b.at || '').localeCompare(a.at || ''); }).slice(0, 8).forEach(function (f) {
+      var d = mk('div'); d.style.borderTop = '1px solid var(--line)'; d.style.paddingTop = '8px'; d.style.marginTop = '8px';
+      var m = mk('div', 'stamp', (f.byName || 'someone') + (f.section ? ' (' + f.section + ')' : '') + ', ' + (f.at ? new Date(f.at).toLocaleString() : '')); m.style.marginTop = '0';
+      d.appendChild(m); d.appendChild(mk('div', 'txt', f.text)); w.appendChild(d);
+    });
+  }
+
+  ['q', 'fstatus', 'fsev', 'fown'].forEach(function (id) { el(id).addEventListener(id === 'q' ? 'input' : 'change', renderSection); });
+  el('hidedone').addEventListener('click', function () { hideDone = !hideDone; el('hidedone').textContent = hideDone ? 'Show all' : 'Hide done'; renderSection(); });
+  el('fbsend').addEventListener('click', sendFeedback);
+  el('me').addEventListener('change', function () {
+    myName = el('me').value.trim();
+    try { localStorage.setItem('seo_tracker_name', myName); } catch (e) {}
+    if (db && uid) db.doc('data/users/' + uid + '/profile').set({name: myName}).catch(function () {});
+  });
+  try { myName = localStorage.getItem('seo_tracker_name') || ''; el('me').value = myName; } catch (e) {}
+
+  route(); renderAll();
+
+  function start() {
+    timer = setTimeout(function () { if (!loaded) banner('Still trying to reach the tracker data. Anything shown may be out of date.', true); }, 10000);
+    db.collection('meta').onSnapshot(function (snap) { meta = {}; snap.docs.forEach(function (d) { meta[d.id] = d.data() || {}; }); renderAll(); }, function () {});
+    db.collection('findings').onSnapshot(function (snap) {
+      findings = {}; snap.docs.forEach(function (d) { var v = d.data() || {}; v.id = v.id || d.id; findings[d.id] = v; });
+      loaded = true;
+      if (!snap.metadata.fromCache) { clearTimeout(timer); banner('', false); if (!canWrite) banner('You have read only access. Ask the owner for Contributor access to update statuses.', true); }
+      renderAll();
+    }, function (e) { clearTimeout(timer); loaded = true; banner('Could not load the findings (' + (e && e.code ? e.code : 'error') + ').', true); });
+    db.collection('status').onSnapshot(function (snap) { status = {}; snap.docs.forEach(function (d) { status[d.id] = d.data() || {}; }); renderAll(); }, function () {});
+    db.collection('feedback').onSnapshot(function (snap) { feedback = snap.docs.map(function (d) { return d.data() || {}; }); renderFeedback(); }, function () {});
+  }
+
+  (async function boot() {
+    try { db = await claude.use('db'); } catch (e) { db = null; }
+    var user = null;
+    try { user = await claude.use('user'); } catch (e) { user = null; }
+    if (user) {
+      try { uid = await user.id(); } catch (e) { uid = null; }
+      try { var c = await user.can('data.write'); canWrite = (c === null ? true : !!c); } catch (e) { canWrite = true; }
+    }
+    if (!db) {
+      loaded = true; renderAll();
+      banner('The tracker data is not available in this view. Open the artifact while signed in to claude.ai.', true);
+      return;
+    }
+    if (!canWrite) banner('You have read only access. Ask the owner for Contributor access to update statuses.', true);
+    if (uid) {
+      db.doc('data/users/' + uid + '/profile').get().then(function (s) {
+        if (s.exists && s.data().name && !myName) { myName = s.data().name; el('me').value = myName; }
+      }).catch(function () {});
+    }
+    start();
+  })();
+})();
+</script>
+</body>
+</html>

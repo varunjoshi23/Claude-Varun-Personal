@@ -1,0 +1,1216 @@
+{
+ "meta": {
+  "audit": {
+   "client": "Orion Moto",
+   "pageLabel": "electric balance bikes page",
+   "url": "https://orionmoto.com/pages/electric-balance-bikes",
+   "keyword": "electric balance bike",
+   "secondary": "electric powered balance bike; kids electric balance bike; electric balance bike for kids; electric balance bike for sale; buy electric balance bike kids usa",
+   "scope": "US national (English)",
+   "device": "Desktop",
+   "date": "2026-11-08",
+   "position": "Not found in either search run (top 30, then top 10). Non-Google tool, indicative only.",
+   "basis": "Each section score is the share of checked items that pass (Pass = 1, Warn = 0.5, Fail = 0). Not checked items are excluded.",
+   "method": [
+    "Scope: this one URL. Raw HTML and headers fetched with curl and parsed with a script. Every count in the findings comes from that parse.",
+    "Data source: live SERP only. No Ahrefs or Semrush data, so volume, difficulty and authority are not available.",
+    "SERP: two runs of a non-Google web search tool (US). Positions are indicative. No AI Overview, PAA or local-pack data was visible.",
+    "Competitors: same-type category pages from those results. Husqvarna, Harley-Davidson and RevZilla were parsed from raw HTML. Cycle Gear (#1 in run 2), HS Motorsports (#8) and Hyper Bicycles (#9) were blocked by the sandbox network policy and are listed but not analysed. Kawasaki's Elektrode URL returned a 404 page and was dropped.",
+    "Speed: the PageSpeed Insights API quota was exhausted, so local Chromium lab numbers are used. Third-party tags were blocked, so page weight is understated.",
+    "Site facts reused from Orion's own pages: /pages/contact, /pages/about-us, /pages/warranty, /policies/shipping-policy, /pages/comparison-of-bikes and the e16x product page.",
+    "Out of scope (other URLs, mentioned only): the e16x product page states two different rider weight limits (120 lbs in the description, 160 lbs in the FAQ schema)."
+   ]
+  },
+  "competitors": {
+   "cols": [
+    "Page",
+    "Position*",
+    "Ranking URL",
+    "Title",
+    "H1",
+    "Words (main)",
+    "FAQ Qs",
+    "JSON-LD",
+    "Breadcrumb",
+    "Spec/size table"
+   ],
+   "rows": [
+    {
+     "client": true,
+     "cells": [
+      "Orion Moto (client)",
+      "Not in top 30, then not in top 10",
+      "orionmoto.com/pages/electric-balance-bikes",
+      "Buy Kids Electric Balance Bike for Confident Riding",
+      "None",
+      "1,573",
+      "10",
+      "Organization, WebSite",
+      "No",
+      "No"
+     ]
+    },
+    {
+     "cells": [
+      "Husqvarna",
+      "#1 (/en-fi/), then #3 (/en-int/)",
+      "husqvarna-bicycles.com/en-int/archive/electric-balancebikes.html",
+      "Electric Balance Bikes | Husqvarna",
+      "2 H1s: \"Be bold, begin trailblazing\", \"Kids\"",
+      "482",
+      "0",
+      "None",
+      "No",
+      "No"
+     ]
+    },
+    {
+     "cells": [
+      "Harley-Davidson",
+      "#11, then not in top 10",
+      "harley-davidson.com/us/en/motorcycles/future-vehicles/electric/electric-balance-bikes.html",
+      "Electric Balance Bikes | Harley-Davidson USA",
+      "Electric Balance Bikes",
+      "390",
+      "0",
+      "None",
+      "Yes",
+      "No"
+     ]
+    },
+    {
+     "cells": [
+      "RevZilla",
+      "#20, then not in top 10",
+      "revzilla.com/ebikes-electric-balance-bikes",
+      "Electric Balance Bikes | True Pedal ‘Power’ For Kids! - RevZilla",
+      "Electric Balance Bikes (2 H1s)",
+      "775",
+      "0",
+      "WebSite, Organization",
+      "Yes",
+      "No"
+     ]
+    },
+    {
+     "cells": [
+      "Cycle Gear",
+      "Not in top 30, then #1",
+      "cyclegear.com/ebikes-electric-balance-bikes",
+      "Not checked (host blocked)",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked"
+     ]
+    },
+    {
+     "cells": [
+      "HS Motorsports",
+      "Not in top 30, then #8",
+      "hsmotorsports.net/collections/electric-balance-bike",
+      "Not checked (host blocked)",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked"
+     ]
+    },
+    {
+     "cells": [
+      "Hyper Bicycles",
+      "Not in top 30, then #9",
+      "hyperbicycles.com/pages/e-balance-bike-for-kids",
+      "Not checked (host blocked)",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked",
+      "Not checked"
+     ]
+    }
+   ],
+   "behind": {
+    "4": 1,
+    "8": 1
+   },
+   "note": "*Positions come from two runs of a non-Google search tool (US); they are indicative and moved a lot between runs. Dropped positions were held by news and review articles (road.cc, singletracks, motorcyclistonline, insideevs), product pages (STACYC, Hiboy, Walmart) and marketplaces (desertcart). Orion already leads on depth (1,573 words vs a 482 median), FAQ coverage (10 vs 0) and price transparency. It trails on H1 and breadcrumb."
+  },
+  "outline": {
+   "items": [
+    {
+     "tag": "H2",
+     "text": "Your cart (0)",
+     "action": "Modify",
+     "rec": "Cart-drawer title marked up as a heading, output before main. Change it to <p class=\"drawer__heading\"> in the cart-drawer snippet so the page does not open with cart H2s."
+    },
+    {
+     "tag": "H2",
+     "text": "Your cart is empty",
+     "action": "Modify",
+     "rec": "Cart-drawer title marked up as a heading, output before main. Change it to <p class=\"drawer__heading\"> in the cart-drawer snippet so the page does not open with cart H2s."
+    },
+    {
+     "tag": "H2",
+     "text": "Your cart (0)",
+     "action": "Modify",
+     "rec": "Cart-drawer title marked up as a heading, output before main. Change it to <p class=\"drawer__heading\"> in the cart-drawer snippet so the page does not open with cart H2s."
+    },
+    {
+     "tag": "H2",
+     "text": "Shop Orion Moto's Electric Balance Bikes",
+     "action": "Modify",
+     "rec": "Make this the page H1 (change the tag and the text). Directly below it, insert the answer-first paragraph from Rewritten elements, then the product grid. Add a \"Shop\" button under each card price (op-cta).",
+     "new": "H1: Electric Balance Bikes for Kids"
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e12x - Kids Electric Balance Bike 12\" Ride-On Toy Ages 3–6",
+     "action": "Modify",
+     "rec": "Card title. Use the consistent model naming (ai-entity) and show the review stars and count under it (ct-trust).",
+     "new": "e12x: 12\" Electric Balance Bike, Ages 3–6"
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e12x - Kids Electric Balance Bike 12\" Ride-On Toy Ages 3–6",
+     "action": "Modify",
+     "rec": "Duplicate quick-view title. Change it to <div class=\"quick-view__title\"> so each model is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e16X - Kids Electric Balance Bike for 4-8 years old",
+     "action": "Modify",
+     "rec": "Card title. Use the consistent model naming (ai-entity) and show the review stars and count under it (ct-trust).",
+     "new": "e16x: 16\" Electric Balance Bike, Ages 4–8"
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e16X - Kids Electric Balance Bike for 4-8 years old",
+     "action": "Modify",
+     "rec": "Duplicate quick-view title. Change it to <div class=\"quick-view__title\"> so each model is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e20X Full Suspension- Kids Electric Balance Bike",
+     "action": "Modify",
+     "rec": "Card title. Use the consistent model naming (ai-entity) and show the review stars and count under it (ct-trust).",
+     "new": "e20x-FS: 20\" Full-Suspension Electric Balance Bike"
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e20X Full Suspension- Kids Electric Balance Bike",
+     "action": "Modify",
+     "rec": "Duplicate quick-view title. Change it to <div class=\"quick-view__title\"> so each model is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e24X - Electric Balance Bike",
+     "action": "Modify",
+     "rec": "Card title. Use the consistent model naming (ai-entity) and show the review stars and count under it (ct-trust).",
+     "new": "e24x: 24\" Full-Suspension Electric Balance Bike"
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto e24X - Electric Balance Bike",
+     "action": "Modify",
+     "rec": "Duplicate quick-view title. Change it to <div class=\"quick-view__title\"> so each model is a heading once."
+    },
+    {
+     "tag": "H2",
+     "text": "(new heading)",
+     "action": "Add New",
+     "rec": "New section 1 of 2, directly after the grid. Spec and size table: Model | Wheel | Motor | Battery | Ages | Price (see ai-formats), with seat height and maximum rider weight from the product pages. Under it, add the trust strip from ct-trust.",
+     "new": "Which Size Electric Balance Bike Fits Your Child?"
+    },
+    {
+     "tag": "H2",
+     "text": "Meet Our Electric Balance Bikes",
+     "action": "Modify",
+     "rec": "Eyebrow label stacked above another H2. Change it to <p class=\"eyebrow\">The Orion eSeries is our electric balance bike range</p>."
+    },
+    {
+     "tag": "H2",
+     "text": "ORION ELECTRIC BALANCE BIKES",
+     "action": "Modify",
+     "rec": "Keep the section but give it a descriptive heading. Remove the \"PREMIUM QUALITY\" label. Add the USP sentence (ct-usp) and the Fort Worth / since-2006 line (ct-eeat). Merge in the one useful sentence from \"Give young riders a taste of real dirt biking\" (electric assist builds balance and throttle control), then delete that section.",
+     "new": "Off-Road Electric Balance Bikes Built for Real Riding"
+    },
+    {
+     "tag": "H2",
+     "text": "Frequently Asked Questions",
+     "action": "Modify",
+     "rec": "Remove the \"Find Answers To All Your Questions\" filler subline. Fix \"teh\". Add FAQPage markup (ai-schema-faq).",
+     "new": "Electric Balance Bike FAQs"
+    },
+    {
+     "tag": "H2",
+     "text": "(empty <h2>)",
+     "action": "Remove",
+     "rec": "Empty heading tag with no text. Delete it from the section template. There is no content to move."
+    },
+    {
+     "tag": "H3",
+     "text": "What is an electric balance bike?",
+     "action": "Keep",
+     "rec": "Answer stands alone. No change."
+    },
+    {
+     "tag": "H3",
+     "text": "What age is a kids electric balance bike suitable for?",
+     "action": "Keep",
+     "rec": "Answer stands alone. No change."
+    },
+    {
+     "tag": "H3",
+     "text": "Is a kids electric bike safe for beginners?",
+     "action": "Keep",
+     "rec": "Answer stands alone. No change."
+    },
+    {
+     "tag": "H3",
+     "text": "What size electric balance bike should I get for my child?",
+     "action": "Keep",
+     "rec": "Rewrite the answer as in ai-chunks so it points to the size table, not \"the picture below\". Link \"sizes by age\" to /blogs/orion-insider/best-electric-balance-bike-by-age."
+    },
+    {
+     "tag": "H3",
+     "text": "Do kids need to know how to ride a bike first?",
+     "action": "Keep",
+     "rec": "Add: \"Strider Mode cuts motor power entirely for pure balance practice.\""
+    },
+    {
+     "tag": "H3",
+     "text": "How fast do electric balance bikes go?",
+     "action": "Keep",
+     "rec": "Add: \"Race mode is adult-unlocked and intended for closed courses.\""
+    },
+    {
+     "tag": "H3",
+     "text": "How long does the battery last?",
+     "action": "Keep",
+     "rec": "Add the attributed comparison (ai-stats) and link \"6-month battery warranty\" to /pages/warranty."
+    },
+    {
+     "tag": "H3",
+     "text": "How long does it take to charge the battery on the Orion electric balance bikes?",
+     "action": "Keep",
+     "rec": "Answer stands alone. No change."
+    },
+    {
+     "tag": "H3",
+     "text": "Are electric balance bikes waterproof?",
+     "action": "Keep",
+     "rec": "Answer stands alone. No change."
+    },
+    {
+     "tag": "H3",
+     "text": "Are the bikes chain-driven or hub motor?",
+     "action": "Keep",
+     "rec": "Last existing FAQ. The two new FAQ H3 rows below come directly after it."
+    },
+    {
+     "tag": "H3",
+     "text": "(new FAQ)",
+     "action": "Add New",
+     "rec": "Answer: \"Yes. Orion ships within the United States, with free shipping on bikes to the 48 continental states. For Alaska or Hawaii, contact us before ordering, as extra shipping applies. We do not ship internationally.\" Link to /policies/shipping-policy.",
+     "new": "Do you ship electric balance bikes across the USA?"
+    },
+    {
+     "tag": "H3",
+     "text": "(new FAQ)",
+     "action": "Add New",
+     "rec": "Answer: \"Every new Orion bike bought on or after October 1, 2026 has a 5-year frame warranty, a 1-year warranty on the bike and covered components, and a 6-month battery warranty.\" Link to /pages/warranty.",
+     "new": "What warranty comes with an Orion electric balance bike?"
+    },
+    {
+     "tag": "H2",
+     "text": "Give young riders a taste of real dirt biking",
+     "action": "Remove",
+     "rec": "Repeats the eSeries intro. Move the throttle-control sentence into \"Off-Road Electric Balance Bikes Built for Real Riding\", change \"electric assist\" to \"electric-powered balance bike\" once (op-kw), then delete the section. Put a CTA here instead: \"Not sure which size? Compare all four Orion bikes\", linking to /pages/comparison-of-bikes."
+    },
+    {
+     "tag": "H2",
+     "text": "(empty <h2>)",
+     "action": "Remove",
+     "rec": "Empty heading tag with no text. Delete it from the section template. There is no content to move."
+    },
+    {
+     "tag": "H2",
+     "text": "ESeries Parts",
+     "action": "Modify",
+     "rec": "Keep the section. Give the banner image an alt (op-images).",
+     "new": "eSeries Replacement Parts"
+    },
+    {
+     "tag": "H2",
+     "text": "Orion Blog",
+     "action": "Modify",
+     "rec": "Show 4 cards, not 9 (ct-dup).",
+     "new": "Electric Balance Bike Guides"
+    },
+    {
+     "tag": "H3",
+     "text": "Best Electric Balance Bike by Age: 3, 4, 5, 6, ...",
+     "action": "Keep",
+     "rec": "Relevant buying guide. Keep it in the 4-card grid."
+    },
+    {
+     "tag": "H3",
+     "text": "Best Electric Balance Bike by Age: 3, 4, 5, 6, ...",
+     "action": "Modify",
+     "rec": "Duplicate title markup on the blog card. Change it to <div> so each post title is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Riding Together: The Family Benefits of Electri...",
+     "action": "Keep",
+     "rec": "Relevant buying guide. Keep it in the 4-card grid."
+    },
+    {
+     "tag": "H3",
+     "text": "Riding Together: The Family Benefits of Electri...",
+     "action": "Modify",
+     "rec": "Duplicate title markup on the blog card. Change it to <div> so each post title is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "The Secret Weapon: How Orion Electric Balance B...",
+     "action": "Keep",
+     "rec": "Relevant buying guide. Keep it in the 4-card grid."
+    },
+    {
+     "tag": "H3",
+     "text": "The Secret Weapon: How Orion Electric Balance B...",
+     "action": "Modify",
+     "rec": "Duplicate title markup on the blog card. Change it to <div> so each post title is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Ask them to squeeze your finger",
+     "action": "Keep",
+     "rec": "Relevant buying guide. Keep it in the 4-card grid."
+    },
+    {
+     "tag": "H3",
+     "text": "Ask them to squeeze your finger",
+     "action": "Modify",
+     "rec": "Duplicate title markup on the blog card. Change it to <div> so each post title is a heading once."
+    },
+    {
+     "tag": "H3",
+     "text": "Kids Electric Balance Bike for Safe and Fun Riding",
+     "action": "Remove",
+     "rec": "Drop this card from the grid (ct-dup). The post stays live and reachable from the blog."
+    },
+    {
+     "tag": "H3",
+     "text": "Kids Electric Balance Bike for Safe and Fun Riding",
+     "action": "Remove",
+     "rec": "Duplicate title markup; goes with the removed card."
+    },
+    {
+     "tag": "H3",
+     "text": "500W Electric Bike & Electric Balance Bike: The...",
+     "action": "Remove",
+     "rec": "Drop this card from the grid (ct-dup). The post stays live and reachable from the blog."
+    },
+    {
+     "tag": "H3",
+     "text": "500W Electric Bike & Electric Balance Bike: The...",
+     "action": "Remove",
+     "rec": "Duplicate title markup; goes with the removed card."
+    },
+    {
+     "tag": "H3",
+     "text": "How to buy Electric Bikes: The Ultimate Guide t...",
+     "action": "Remove",
+     "rec": "Drop this card from the grid (ct-dup). The post stays live and reachable from the blog."
+    },
+    {
+     "tag": "H3",
+     "text": "How to buy Electric Bikes: The Ultimate Guide t...",
+     "action": "Remove",
+     "rec": "Duplicate title markup; goes with the removed card."
+    },
+    {
+     "tag": "H3",
+     "text": "Kids Electric Balance Bike: A Viable Introducti...",
+     "action": "Remove",
+     "rec": "Drop this card from the grid (ct-dup). The post stays live and reachable from the blog."
+    },
+    {
+     "tag": "H3",
+     "text": "Kids Electric Balance Bike: A Viable Introducti...",
+     "action": "Remove",
+     "rec": "Duplicate title markup; goes with the removed card."
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto’s Next Chapter: Better Value, Better...",
+     "action": "Remove",
+     "rec": "Drop this card from the grid (ct-dup). The post stays live and reachable from the blog."
+    },
+    {
+     "tag": "H3",
+     "text": "Orion Moto’s Next Chapter: Better Value, Better...",
+     "action": "Remove",
+     "rec": "Duplicate title markup; goes with the removed card."
+    }
+   ]
+  },
+  "rewrites": {
+   "blocks": [
+    {
+     "section": "on-page",
+     "label": "Title tag (54 characters)",
+     "before": "Buy Kids Electric Balance Bike for Confident Riding",
+     "text": "Electric Balance Bikes for Kids Ages 3–12 | Orion Moto"
+    },
+    {
+     "section": "on-page",
+     "label": "Meta description (147 characters)",
+     "before": "Shop kids electric balance bike options designed for confident riding. Each electric balance bike supports control & smooth kids electric bike experience.",
+     "text": "Shop Orion electric balance bikes for kids ages 3–12: four sizes from $699, up to 4 hours per charge, a 5-year frame warranty and free US shipping."
+    },
+    {
+     "section": "on-page",
+     "label": "H1 (replaces the H2 \"Shop Orion Moto's Electric Balance Bikes\")",
+     "before": "(no H1)",
+     "text": "Electric Balance Bikes for Kids"
+    },
+    {
+     "section": "content",
+     "label": "Answer-first opening paragraph (60 words), directly under the H1",
+     "text": "An electric balance bike is a pedal-free kids' bike with a quiet hub motor and parent-set speed modes, so children learn balance and throttle control before a dirt bike. Orion's four sizes fit riders ages 3–12, from the 12-inch e12x ($699) to the 24-inch e24x ($1,699), run up to 4 hours per charge and ship free in the continental US."
+    },
+    {
+     "section": "technical",
+     "label": "JSON-LD @graph: replaces the existing Organization/WebSite block on this page (same @ids). Adds CollectionPage, ItemList, BreadcrumbList and FAQPage. sameAs is left out because no social profile URLs were confirmed on the site.",
+     "text": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Organization\",\n      \"@id\": \"https://orionmoto.com/#organization\",\n      \"name\": \"Orion Moto\",\n      \"url\": \"https://orionmoto.com/\",\n      \"logo\": \"https://orionmoto.com/cdn/shop/files/orion-electric-logo.png\",\n      \"foundingDate\": \"2006\",\n      \"telephone\": \"+1-817-286-7700\",\n      \"address\": {\n        \"@type\": \"PostalAddress\",\n        \"streetAddress\": \"2550 McMillan Parkway, STE A\",\n        \"addressLocality\": \"Fort Worth\",\n        \"addressRegion\": \"TX\",\n        \"postalCode\": \"76137\",\n        \"addressCountry\": \"US\"\n      }\n    },\n    {\n      \"@type\": \"WebSite\",\n      \"@id\": \"https://orionmoto.com/#website\",\n      \"url\": \"https://orionmoto.com/\",\n      \"name\": \"Orion Moto\",\n      \"publisher\": {\n        \"@id\": \"https://orionmoto.com/#organization\"\n      }\n    },\n    {\n      \"@type\": \"CollectionPage\",\n      \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#webpage\",\n      \"url\": \"https://orionmoto.com/pages/electric-balance-bikes\",\n      \"name\": \"Electric Balance Bikes for Kids Ages 3–12 | Orion Moto\",\n      \"isPartOf\": {\n        \"@id\": \"https://orionmoto.com/#website\"\n      },\n      \"about\": {\n        \"@id\": \"https://orionmoto.com/#organization\"\n      },\n      \"breadcrumb\": {\n        \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#breadcrumb\"\n      },\n      \"mainEntity\": {\n        \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#itemlist\"\n      },\n      \"inLanguage\": \"en-US\"\n    },\n    {\n      \"@type\": \"ItemList\",\n      \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#itemlist\",\n      \"numberOfItems\": 4,\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Orion Moto e12x - Kids Electric Balance Bike 12\\\" Ride-On Toy Ages 3–6\",\n          \"url\": \"https://orionmoto.com/products/orion-e12x-gen4-12-inch-250w-24v-deluxe-electric-balance-bike\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Orion Moto e16X - Kids Electric Balance Bike for 4-8 years old\",\n          \"url\": \"https://orionmoto.com/products/orion-e16x-gen4-16-inch-500w-36v-deluxe-electric-balance-bike\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"Orion Moto e20X Full Suspension- Kids Electric Balance Bike\",\n          \"url\": \"https://orionmoto.com/products/orion-e20x-fs-gen4-full-suspension-20-inch-500w-48v-electric-balance-bike\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"Orion Moto e24X - Electric Balance Bike\",\n          \"url\": \"https://orionmoto.com/products/orion-e24x-gen4-24-inch-750w-60v-deluxe-electric-balance-bike\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#breadcrumb\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Home\",\n          \"item\": \"https://orionmoto.com/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Electric Balance Bikes\",\n          \"item\": \"https://orionmoto.com/pages/electric-balance-bikes\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#faq\",\n      \"isPartOf\": {\n        \"@id\": \"https://orionmoto.com/pages/electric-balance-bikes#webpage\"\n      },\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What is an electric balance bike?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Electric Balance bikes are motorized bikes made specifically for children that lack pedals. They are lightweight and help the child develop balance and other important skills while having fun learning.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What age is a kids electric balance bike suitable for?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Most kids electric balance bikes are designed for ages 3–12, depending on size and power.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Is a kids electric bike safe for beginners?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Yes, they include low-speed modes and balance-focused design for safe learning.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What size electric balance bike should I get for my child?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"It all depends on your kid's height and inseam. When the bike is well-fitted, your kid will be able to put both feet firmly on the floor when sitting down. See the picture below for Orion electric balance bike sizing.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Do kids need to know how to ride a bike first?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Not at all. Children usually find electric balance bikes easier to learn, as they help children develop balancing skills without requiring pedaling. In fact, it is quite common for children to learn to ride an electric balance bike even before riding a regular bike.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How fast do electric balance bikes go?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Speed varies by model, but most kids electric balance bikes range from around 4 mph to 20 mph, depending on the power mode. All Orion electric balance bikes offer 3 speed settings and a race/MAX mode for faster speeds.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How long does the battery last?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Battery range varies, but all Orion electric balance bikes can run for up to 4 hours of ride time or up to 20+ miles, depending on terrain, speed setting, and usage.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How long does it take to charge the battery on the Orion electric balance bikes?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Typical charging time is 2–4 hours, depending on the battery size and charger.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Are electric balance bikes waterproof?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"They are designed to handle light splashes and normal outdoor conditions, but they should not be submerged or ridden in heavy rain conditions. Light washing is acceptable. When washing your bike, avoid high-pressure power washers or spraying water directly into the bottom frame area or charge port area.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Are the bikes chain-driven or hub motor?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Orion electric bikes are brushless hub drive only. We purposely do not use a chain drive system, as they inherently have issues. Brushless hub drives are virtually maintenance-free and will provide performance and reliability.\"\n          }\n        }\n      ]\n    }\n  ]\n}\n</script>"
+    }
+   ]
+  }
+ },
+ "findings": [
+  {
+   "id": "tc-status",
+   "category": "Technical",
+   "ai": false,
+   "check": "Status and redirects",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "Crawl",
+   "actual": "200 on https://orionmoto.com/pages/electric-balance-bikes with no redirect chain. http:// and www. variants each 301 to it in one hop.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "tc-canonical",
+   "category": "Technical",
+   "ai": false,
+   "check": "Canonical",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Crawl",
+   "actual": "One canonical: https://orionmoto.com/pages/electric-balance-bikes (self-referencing, absolute). The URL is listed in sitemap_pages_1.xml.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "tc-index",
+   "category": "Technical",
+   "ai": false,
+   "check": "Indexability",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Crawl",
+   "actual": "meta robots \"index, follow, max-image-preview:large, max-snippet:-1\". No X-Robots-Tag header. robots.txt allows /pages/ for all agents. Listed in the sitemap.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "tc-gsc",
+   "category": "Technical",
+   "ai": false,
+   "check": "Index status (Search Console)",
+   "verdict": "Not checked",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Crawl",
+   "actual": "Not checked: no Search Console access in this audit, and the search tool used is not Google, so a site: check is not reliable.",
+   "competitors": "n/a",
+   "fix": "In Search Console, run URL Inspection on https://orionmoto.com/pages/electric-balance-bikes. Then open Performance > Pages, filter the query \"electric balance bike\", and check which URL gets the impressions: this page or /collections/electric-balance-bikes. That tells you which URL Google already prefers (see ct-cannibal)."
+  },
+  {
+   "id": "tc-https",
+   "category": "Technical",
+   "ai": false,
+   "check": "HTTPS / HSTS / mixed content",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "Crawl",
+   "actual": "Valid TLS. HSTS is present (max-age=7889238, about 91 days, no includeSubDomains). The CSP sets upgrade-insecure-requests. The only http:// reference is og:image (see ai-entity).",
+   "competitors": "n/a",
+   "fix": "Optional: raise HSTS to max-age=31536000 in the Cloudflare settings."
+  },
+  {
+   "id": "tc-mobile",
+   "category": "Technical",
+   "ai": false,
+   "check": "Mobile rendering",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "UX",
+   "actual": "The viewport is width=device-width,initial-scale=1. The lab render found no horizontal scroll. This audit targets desktop, so mobile was not checked in depth.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "tc-cwv",
+   "category": "Technical",
+   "ai": false,
+   "check": "Core Web Vitals",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "UX",
+   "actual": "Local lab (Chromium, no throttling; the PageSpeed Insights API quota was exhausted, and no CrUX field data was available): LCP 1.78 s (element: H2 \"Shop Orion Moto's Electric Balance Bikes\"), CLS 0.001, TTFB 382 ms, FCP 1.54 s. INP was not measured.",
+   "competitors": "n/a",
+   "fix": "Re-check with PageSpeed Insights (desktop and mobile) once the quota resets, and record the CrUX field data if the URL has any."
+  },
+  {
+   "id": "tc-weight",
+   "category": "Technical",
+   "ai": false,
+   "check": "Page weight and render-blocking",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "M",
+   "owner": "Dev",
+   "impact": "UX",
+   "actual": "83 requests and 1,418 KB, measured with third-party tags (Facebook, GTM, adscale) blocked by the sandbox, so the real weight is higher. The head has 15 stylesheets and 1 render-blocking script. The largest file is a 362 KB Shopify checkout-web JS bundle on a landing page that has no checkout.",
+   "competitors": "n/a",
+   "fix": "Find the app or section that loads shopifycloud/checkout-web on /pages/ templates (usually an accelerated-checkout or \"buy now\" button in the quick-view modal) and load it only on product templates or on quick-view open. Merge the 15 head stylesheets where the theme allows it (orion-home.css, orion-pro.css and orion-final-polish.css are candidates)."
+  },
+  {
+   "id": "tc-imgdelivery",
+   "category": "Technical",
+   "ai": false,
+   "check": "Image delivery",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "UX",
+   "actual": "orion-eseries-e20x-g4fs-full-suspension-spoke_..._2900x.webp is served at 2900 px (120 KB) with no width, height, alt or loading attribute. The size-chart image mceu_99919292911775507442526.png uses width=\"100%\" height=\"100%\" instead of pixel dimensions. The two YouTube thumbnails have no dimensions. Of the four product-card images, three load eagerly and the e24x card is lazy.",
+   "competitors": "n/a",
+   "fix": "Serve the e20x spoke image through Shopify's image_url with width: 1200 and set width/height. Give the size chart real pixel dimensions. Set width=\"1280\" height=\"720\" on the YouTube thumbnails. Make all four product cards load the same way (eager in the first row)."
+  },
+  {
+   "id": "tc-breadcrumb",
+   "category": "Technical",
+   "ai": false,
+   "check": "Breadcrumbs",
+   "verdict": "Fail",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "CTR",
+   "actual": "No visible breadcrumb trail and no BreadcrumbList schema on this page. Orion's product pages already output BreadcrumbList.",
+   "competitors": "2 of 3 readable competitors show a breadcrumb (Harley-Davidson: \"Home / Kids / Electric Balance Bikes\"; RevZilla).",
+   "fix": "Add a visible trail \"Home / Electric Balance Bikes\" above the H1. Add BreadcrumbList to the page (it is included in the JSON-LD rewrite on this tab)."
+  },
+  {
+   "id": "tc-depth",
+   "category": "Technical",
+   "ai": false,
+   "check": "Internal link depth",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "0 links from the homepage. The main-nav item \"Electric Balance Bikes\" points to /collections/electric-balance-bikes, not to this page. The collection page does not link here either. This page relies on the sitemap and blog links for discovery.",
+   "competitors": "n/a",
+   "fix": "Point the main-nav \"Electric Balance Bikes\" link and the homepage category links at whichever URL wins the ct-cannibal decision. If this page is kept as the target: change the nav href to /pages/electric-balance-bikes, and add a text link from the collection intro \"See all four sizes compared on our electric balance bikes page\"."
+  },
+  {
+   "id": "tc-links",
+   "category": "Technical",
+   "ai": false,
+   "check": "Outbound internal links resolve",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Crawl",
+   "actual": "All 40 internal URLs linked from the page return 200. /account and the customer-auth link return 302 as expected. Five URLs returned 429 on the first pass because of rate limiting, then 200 on a slower re-check.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "tc-dup",
+   "category": "Technical",
+   "ai": false,
+   "check": "Near-duplicate pages",
+   "verdict": "Fail",
+   "severity": "Critical",
+   "effort": "M",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "https://orionmoto.com/collections/electric-balance-bikes covers the same topic and lists the same four bikes. Its title is \"Electric Balance Bike for Kids Ages 3–12 Riding Range\", its H1 is \"More Than a Bike. Core Memories Start Here\", it has 710 words, its own FAQ, a \"TRUSTED BY THOUSANDS OF RIDERS.\" section and an \"ORION VS STACYC.\" section. Two Orion URLs compete for one keyword set.",
+   "competitors": "n/a",
+   "fix": "Make one URL the target for \"electric balance bike\" (decision in ct-cannibal). Retitle the other one toward a different intent. For example, if this page is kept: collection title \"Shop All Orion Balance Bike Models: e12x, e16x, e20x-FS, e24x\" and H1 \"Shop Orion Balance Bike Models\". If the collection is kept: 301 this page to it and move the 10 FAQs across first."
+  },
+  {
+   "id": "tc-hreflang",
+   "category": "Technical",
+   "ai": false,
+   "check": "hreflang",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Crawl",
+   "actual": "Not applicable: single US market. The shipping policy says orders ship only within the United States, and no hreflang is set.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "ai-schema-entity",
+   "category": "Technical",
+   "ai": true,
+   "check": "Primary entity schema connected to the page",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "AI visibility",
+   "actual": "The only JSON-LD is a @graph with Organization (name and url only) and WebSite. There is no CollectionPage, no ItemList of the four bikes and no BreadcrumbList. The site already publishes the missing Organization facts on /pages/contact (2550 McMillan Parkway, STE A, Fort Worth, TX 76137; 817-286-7700) and /pages/about-us (founded 2006), but this page does not use them.",
+   "competitors": "RevZilla has Organization/WebSite only. Husqvarna and Harley-Davidson have no JSON-LD. This is an early-mover opportunity, not a gap.",
+   "fix": "Replace the existing Organization/WebSite block with the @graph in Rewritten elements on this tab. It keeps the same @ids and adds CollectionPage, ItemList, BreadcrumbList and FAQPage."
+  },
+  {
+   "id": "ai-schema-faq",
+   "category": "Technical",
+   "ai": true,
+   "check": "FAQ / Q&A schema",
+   "verdict": "Fail",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "AI visibility",
+   "actual": "10 visible FAQ questions (H3s under \"Frequently Asked Questions\") and no FAQPage markup. Orion's product pages (e.g. e16x) already output FAQPage.",
+   "competitors": "0 of 3 readable competitors have an FAQ.",
+   "fix": "Add the FAQPage node from the JSON-LD rewrite. Its answers match the visible text word for word, with the \"teh\" typo corrected (fix the visible text at the same time, see op-markup). When you apply the FAQ answer edits on the Content tab, update the matching schema answers too."
+  },
+  {
+   "id": "ai-crawlers",
+   "category": "Technical",
+   "ai": true,
+   "check": "AI crawler access",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "AI visibility",
+   "actual": "robots.txt has explicit groups for GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended and others, each with \"Allow: /\". One group uses an empty \"Disallow:\", which also means allow.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "ai-nojs",
+   "category": "Technical",
+   "ai": true,
+   "check": "Content present without JavaScript",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "AI visibility",
+   "actual": "The main copy, all 10 FAQ answers and the product cards are in the raw HTML: 1,573 words parsed from the server response without rendering.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "op-title",
+   "category": "On-page",
+   "ai": false,
+   "check": "Title tag",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "CTR",
+   "actual": "\"Buy Kids Electric Balance Bike for Confident Riding\" (51 characters). The primary keyword is present but starts at word 3, there is no brand, and \"for Confident Riding\" adds no search value.",
+   "competitors": "3 of 3 lead with \"Electric Balance Bikes\" and end with the brand: \"Electric Balance Bikes | Husqvarna\", \"Electric Balance Bikes | Harley-Davidson USA\", \"Electric Balance Bikes | True Pedal 'Power' For Kids! - RevZilla\".",
+   "fix": "Replace with: \"Electric Balance Bikes for Kids Ages 3–12 | Orion Moto\" (54 characters). Also update og:title and twitter:title."
+  },
+  {
+   "id": "op-meta",
+   "category": "On-page",
+   "ai": false,
+   "check": "Meta description",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "CTR",
+   "actual": "\"Shop kids electric balance bike options designed for confident riding. Each electric balance bike supports control & smooth kids electric bike experience.\" (154 characters). It repeats keyword variants three times and gives no concrete reason to click: no price, sizes, warranty or shipping.",
+   "competitors": "RevZilla gives concrete reasons: \"Free shipping, no-hassle returns and the lowest prices – guaranteed.\"",
+   "fix": "Replace with: \"Shop Orion electric balance bikes for kids ages 3–12: four sizes from $699, up to 4 hours per charge, a 5-year frame warranty and free US shipping.\" (147 characters)."
+  },
+  {
+   "id": "op-h1",
+   "category": "On-page",
+   "ai": false,
+   "check": "H1",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "Rankings",
+   "actual": "0 H1 tags in the raw HTML and in the rendered page. The first heading inside main is the H2 \"Shop Orion Moto's Electric Balance Bikes\".",
+   "competitors": "3 of 3 have an H1. Harley-Davidson and RevZilla use exactly \"Electric Balance Bikes\".",
+   "fix": "Change the section heading \"Shop Orion Moto's Electric Balance Bikes\" from <h2> to <h1> and change its text to \"Electric Balance Bikes for Kids\". Keep it different from the title."
+  },
+  {
+   "id": "op-headings",
+   "category": "On-page",
+   "ai": false,
+   "check": "Heading hierarchy",
+   "verdict": "Fail",
+   "severity": "Medium",
+   "effort": "M",
+   "owner": "Dev",
+   "impact": "Rankings",
+   "actual": "12 H2s and 36 H3s, but only about 5 are real section headings. Problems: 3 cart-drawer H2s (\"Your cart (0)\" x2, \"Your cart is empty\") come before main; there are 2 empty <h2></h2>; each of the 4 product names is an H3 twice (card plus quick view); all 9 blog titles are H3s twice; \"Meet Our Electric Balance Bikes\" is an H2 eyebrow right above the H2 \"ORION ELECTRIC BALANCE BIKES\".",
+   "competitors": "Harley-Davidson: 1 H1, then H2s for real sections (\"Choosing the Right Kid's Electric Bicycle\", \"Proper Protective and Riding Gear\").",
+   "fix": "Follow the Content outline on the Content tab. In short: make the cart-drawer titles <p>, delete the 2 empty H2s, make the quick-view and duplicate blog titles <p> or <div>, and turn \"Meet Our Electric Balance Bikes\" into a <p class=\"eyebrow\">."
+  },
+  {
+   "id": "op-url",
+   "category": "On-page",
+   "ai": false,
+   "check": "URL",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "/pages/electric-balance-bikes: readable, hyphenated, contains the primary keyword, no parameters, one level deep.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "op-first100",
+   "category": "On-page",
+   "ai": false,
+   "check": "First 100 words",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Rankings",
+   "actual": "The first 100 words are product-card text: model names repeated twice, \"Regular price Sale price $699.00 $899.00 Quick View Sale\". No sentence answers what an electric balance bike is. The first prose sentence comes after about 130 words.",
+   "competitors": "Husqvarna opens with prose in its first 30 words (\"Available in two sizes, these exciting, lightweight, electric balance bikes allow children to start riding with confidence...\").",
+   "fix": "Insert the answer-first paragraph from Rewritten elements (Content tab) directly under the new H1, above the product grid."
+  },
+  {
+   "id": "op-kw",
+   "category": "On-page",
+   "ai": false,
+   "check": "Primary + secondary keyword coverage",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Rankings",
+   "actual": "Phrase counts in raw HTML: \"electric balance bike\" 50, \"kids electric balance bike\" 14, \"electric balance bike for kids\" 0, \"electric powered balance bike\" 0, \"electric balance bike for sale\" 0, \"buy electric balance bike kids usa\" 0. Placement: title yes, URL yes, image alt yes, internal anchors yes, H1 none, first paragraph none.",
+   "competitors": "n/a",
+   "fix": "Do not add more exact-match repeats: 50 is already heavy. The new title and H1 cover \"for kids\". The opening covers \"free in the continental US\" for the USA modifier. Change the price row label above the grid to \"Electric balance bikes for sale: four sizes, free US shipping\" for the \"for sale\" intent. Use \"electric-powered\" once in the throttle-control sentence you merge into the eSeries intro (\"an electric-powered balance bike lets kids build balance and throttle control naturally\"). Do not force \"buy electric balance bike kids usa\" in verbatim."
+  },
+  {
+   "id": "op-images",
+   "category": "On-page",
+   "ai": false,
+   "check": "Images",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "5 of 24 images have no alt text: the e20x spoke hero, the size-chart PNG (mceu_99919292911775507442526.png), and two \"parts-electric-balance-bikes\" banners (the fifth is the Facebook pixel). The two YouTube thumbnails use alt=\"media file\". The size chart that FAQ 4 refers to (\"See the picture below\") has no alt, so its sizing data is invisible to search and AI.",
+   "competitors": "n/a",
+   "fix": "Alts: e20x spoke \"Orion e20x-FS full-suspension electric balance bike with aluminum spoke wheels\"; size chart \"Orion electric balance bike size chart by rider inseam and seat height: e12x, e16x, e20x-FS, e24x\"; parts banner \"Orion eSeries replacement parts for electric balance bikes\". Replace \"media file\" with each video's title. Also add the size chart as an HTML table (see ai-formats)."
+  },
+  {
+   "id": "op-internal",
+   "category": "On-page",
+   "ai": false,
+   "check": "Internal links",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Rankings",
+   "actual": "Links go to the 4 products, /pages/comparison-of-bikes (\"How do Orion Electric Balance Bikes compare to other models?\"), /collections/eseries-parts and 9 blog posts. The FAQ answers about sizing, age and safety link nowhere, although /blogs/orion-insider/best-electric-balance-bike-by-age and /pages/warranty exist.",
+   "competitors": "Harley-Davidson links its sizing guide and gear from in-page copy.",
+   "fix": "FAQ 2 and 4: link \"sizing\" to /blogs/orion-insider/best-electric-balance-bike-by-age with the anchor \"electric balance bike sizes by age\". FAQ 7 and 8: link to /pages/warranty with \"6-month battery warranty\". Add \"free shipping in the 48 continental states\" linking to /policies/shipping-policy near the grid."
+  },
+  {
+   "id": "op-external",
+   "category": "On-page",
+   "ai": false,
+   "check": "External citations",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "Not applicable: the claims are Orion's own product specs (speeds, runtime, charge time), not third-party statistics. 0 external links.",
+   "competitors": "0 of 3 readable competitors cite external sources.",
+   "fix": "No action."
+  },
+  {
+   "id": "op-cta",
+   "category": "On-page",
+   "ai": false,
+   "check": "CTA and conversion",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Design",
+   "impact": "Conversion",
+   "actual": "The lab render found no CTA button above the fold. The product cards offer only \"Quick View\", with no \"Shop\" or \"Add to cart\" button. There is no repeated CTA after the FAQ or the \"Give young riders a taste of real dirt biking\" section.",
+   "competitors": "RevZilla shows price, rating and \"Free Shipping\" on every card.",
+   "fix": "Add a \"Shop e12x\" / \"Shop e16x\" style button under each card price, linking to the product. Add a CTA after the FAQ: \"Not sure which size? Compare all four Orion bikes\", linking to /pages/comparison-of-bikes."
+  },
+  {
+   "id": "op-fresh",
+   "category": "On-page",
+   "ai": false,
+   "check": "Freshness",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "CTR",
+   "actual": "Prices are current with sale strike-throughs. The latest blog card is dated November 5, 2026. Category pages normally do not show an updated date.",
+   "competitors": "0 of 3 show a date.",
+   "fix": "No action."
+  },
+  {
+   "id": "op-markup",
+   "category": "On-page",
+   "ai": false,
+   "check": "Markup hygiene",
+   "verdict": "Fail",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Dev",
+   "impact": "UX",
+   "actual": "FAQ 4 says \"See teh picture below\". There are 2 empty <h2></h2>, duplicate quick-view H3s and cart-drawer H2s. og:image uses http://orionmoto.com/... while og:image:secure_url uses https.",
+   "competitors": "n/a",
+   "fix": "Fix \"teh\" to \"the\". Delete the empty H2s. Make the quick-view titles <div>. Change og:image to https://orionmoto.com/cdn/shop/files/orion-moto-orange-hero-eseries-with-logo.webp?v=1782752977."
+  },
+  {
+   "id": "ai-qheads",
+   "category": "On-page",
+   "ai": true,
+   "check": "Question-shaped headings",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "10 FAQ H3s are phrased as real questions (\"What size electric balance bike should I get for my child?\", \"How fast do electric balance bikes go?\").",
+   "competitors": "0 of 3 have question headings.",
+   "fix": "No action. Add the 2 new questions from ct-buyerq in the same style."
+  },
+  {
+   "id": "ai-entity",
+   "category": "On-page",
+   "ai": true,
+   "check": "Entity consistency",
+   "verdict": "Warn",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "Product names vary: \"e12x\" / \"e16X\" / \"e20X Full Suspension\" on this page, \"e20x-FS\" on the comparison page and in image alts. The line name appears as \"eSeries\", \"ESeries\" and \"Orion eSeries\". og:image uses http://.",
+   "competitors": "n/a",
+   "fix": "Use one form everywhere: e12x, e16x, e20x-FS, e24x, and \"Orion eSeries\". Rename the H2 \"ESeries Parts\" to \"eSeries Replacement Parts\". Fix og:image to https."
+  },
+  {
+   "id": "ct-intent",
+   "category": "Content",
+   "ai": false,
+   "check": "Page type vs SERP intent",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "The SERP (non-Google search tool, two runs) mixes manufacturer and retailer category pages (Husqvarna, Harley-Davidson, RevZilla, Cycle Gear), product pages (STACYC, Hiboy) and news or reviews (road.cc, singletracks, motorcyclistonline). A category/landing page matches the dominant commercial intent.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "ct-depth",
+   "category": "Content",
+   "ai": false,
+   "check": "Depth vs competitor median",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Rankings",
+   "actual": "1,573 words in main vs a competitor median of 482 (range 390 to 775, 3 readable pages). About 600 of those words are duplicated blog and product-card text (see ct-dup).",
+   "competitors": "Client leads 3 of 3 on raw length.",
+   "fix": "No action on length. Cut the duplication rather than adding words."
+  },
+  {
+   "id": "ct-dup",
+   "category": "Content",
+   "ai": false,
+   "check": "Duplicated and padded blocks",
+   "verdict": "Fail",
+   "severity": "Medium",
+   "effort": "M",
+   "owner": "Content",
+   "impact": "UX",
+   "actual": "Each product name appears twice (card plus quick view). All 9 blog cards repeat their title and excerpt twice. The \"Meet Our Electric Balance Bikes\" + \"PREMIUM QUALITY\" + \"ORION ELECTRIC BALANCE BIKES\" stack is three headers for one block. The eSeries intro and the \"Give young riders a taste of real dirt biking\" paragraph make the same off-road and bridge-to-dirt-bike point.",
+   "competitors": "n/a",
+   "fix": "Subtract first: show 4 blog cards, not 9 (keep Best Electric Balance Bike by Age, Ask them to squeeze your finger, Riding Together, The Secret Weapon). Drop the 2025 dealer-program post and the three generic \"Kids Electric Balance Bike...\" posts from this grid. Remove the duplicate blog title markup. Merge the \"Give young riders...\" paragraph into the eSeries intro and delete that section."
+  },
+  {
+   "id": "ct-eeat",
+   "category": "Content",
+   "ai": false,
+   "check": "Author / expert credentials (E-E-A-T)",
+   "verdict": "Warn",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "No author is needed on a category page, but the page never states who Orion is. /pages/about-us has the facts: founded 2006 in Fort Worth, Texas, and building its own bikes since 2018.",
+   "competitors": "Harley-Davidson and Husqvarna rely on brand recognition.",
+   "fix": "Add one line under the eSeries intro: \"Designed and supported by Orion Moto in Fort Worth, Texas, building off-road bikes since 2006,\" linking to /pages/about-us."
+  },
+  {
+   "id": "ct-trust",
+   "category": "Content",
+   "ai": false,
+   "check": "Trust signals",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Conversion",
+   "actual": "The e16x product page carries a 4.7 rating from 3,500 reviews (Product schema). The site also offers a 5-year frame / 1-year bike / 6-month battery warranty (/pages/warranty) and free US shipping. This page shows none of that in its content: no star rating, no warranty terms, no review count. Only the site-wide \"FREE SHIPPING (US)\" bar appears.",
+   "competitors": "RevZilla shows a star rating and review count on every product card and \"Free Shipping\". The collection page on Orion's own site has \"TRUSTED BY THOUSANDS OF RIDERS.\"",
+   "fix": "Show the existing review stars and counts on each product card (the review app's collection-card snippet). Add a trust strip under the grid: \"4.7 stars from 3,500+ reviews · 5-year frame warranty · Free shipping in the 48 continental states · Call or text 817-286-7700\". Confirm the rating figure is store-wide before using it in the strip."
+  },
+  {
+   "id": "ct-local",
+   "category": "Content",
+   "ai": false,
+   "check": "Local / market relevance",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "Not applicable: national US e-commerce target. The US-only shipping restriction is covered under ct-buyerq.",
+   "competitors": "n/a",
+   "fix": "No action."
+  },
+  {
+   "id": "ct-pricing",
+   "category": "Content",
+   "ai": false,
+   "check": "Cost and pricing transparency",
+   "verdict": "Pass",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Conversion",
+   "actual": "Every card shows a sale price and the regular price: e12x $699 ($899), e16x $999 ($1,099), e20x-FS $1,549 ($1,899), e24x $1,699 ($1,999).",
+   "competitors": "RevZilla shows prices. Husqvarna does not.",
+   "fix": "No action."
+  },
+  {
+   "id": "ct-buyerq",
+   "category": "Content",
+   "ai": false,
+   "check": "Key buyer questions answered",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Conversion",
+   "actual": "The FAQ answers age, safety, size, speed, battery, charge time, water and drive type. It does not cover weight limit, shipping (continental US free, Alaska/Hawaii by contact, no international), warranty, or assembly (about 30 minutes per the e16x product page), although all of these exist elsewhere on the site.",
+   "competitors": "Harley-Davidson answers weight limits and age cut-offs in \"Choosing the Right Kid's Electric Bicycle\".",
+   "fix": "Add 2 H3s to the existing FAQ. \"Do you ship electric balance bikes across the USA?\" with the answer: \"Yes. Orion ships within the United States, with free shipping on bikes to the 48 continental states. For Alaska or Hawaii, contact us before ordering, as extra shipping applies. We do not ship internationally.\" And \"What warranty comes with an Orion electric balance bike?\" with the answer: \"Every new Orion bike bought on or after October 1, 2026 has a 5-year frame warranty, a 1-year warranty on the bike and covered components, and a 6-month battery warranty.\""
+  },
+  {
+   "id": "ct-segments",
+   "category": "Content",
+   "ai": false,
+   "check": "Audience coverage",
+   "verdict": "Warn",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Rankings",
+   "actual": "The models cover ages 3–12, but the page never maps age or height to a model. That mapping sits in the \"Best Electric Balance Bike by Age\" blog post and in an image with no alt. Parents of first-time riders and racing families (race mode, full suspension on the e20x-FS and e24x) are not addressed separately.",
+   "competitors": "Harley-Davidson maps ages 3–5 vs 6+ in copy.",
+   "fix": "Cover it with the size table from ai-formats (age, seat height and rider weight per model) instead of a new section."
+  },
+  {
+   "id": "ct-usp",
+   "category": "Content",
+   "ai": false,
+   "check": "Differentiators",
+   "verdict": "Warn",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "Conversion",
+   "actual": "Orion's own comparison page claims up to 4 hours per charge vs 30 minutes to 2.5 hours for STACYC and Kawasaki, LiFePO4 batteries, and Strider Mode. On this page \"4 hours\" appears only in FAQ 7 and hub drive only in FAQ 10. \"LiFePO4\" and \"Strider Mode\" appear 0 times.",
+   "competitors": "Husqvarna quotes its runtime (\"up to 60 minutes\") in its opening paragraph. Orion beats that and never says so up top.",
+   "fix": "Add one sentence to the eSeries intro: \"Orion bikes run up to 4 hours per charge, where comparable models from STACYC and Kawasaki run 30 minutes to 2.5 hours, and the e12x, e16x and e20x-FS use LiFePO4 batteries, the chemistry chosen for thermal stability.\" Mention Strider Mode in FAQ 5: \"Strider Mode cuts motor power entirely for pure balance practice.\""
+  },
+  {
+   "id": "ct-cannibal",
+   "category": "Content",
+   "ai": false,
+   "check": "Cannibalisation",
+   "verdict": "Fail",
+   "severity": "Critical",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "Rankings",
+   "actual": "https://orionmoto.com/collections/electric-balance-bikes targets the same keywords (title \"Electric Balance Bike for Kids Ages 3–12 Riding Range\"; meta \"Choose a kids electric balance bike for ages 3–12...\") and receives the main-nav link. This page receives no nav or homepage link. Neither URL appeared in the two searches run for this audit.",
+   "competitors": "n/a",
+   "fix": "Make one decision before any other content work. Recommended, because this page is the briefed landing page and has the deeper FAQ and blog links: keep /pages/electric-balance-bikes as the target. Point the main nav \"Electric Balance Bikes\" here. Retitle the collection to \"Shop All Orion Balance Bike Models: e12x, e16x, e20x-FS, e24x\" so it targets model and brand queries. Link the collection to this page. If Search Console (tc-gsc) shows the collection already earns most impressions for \"electric balance bike\", reverse it: move this page's FAQ to the collection and 301 this URL there."
+  },
+  {
+   "id": "ct-paa",
+   "category": "Content",
+   "ai": false,
+   "check": "People Also Ask coverage",
+   "verdict": "Not checked",
+   "severity": "Medium",
+   "effort": "S",
+   "owner": "SEO",
+   "impact": "AI visibility",
+   "actual": "Not checked: the search tool used shows no People Also Ask box.",
+   "competitors": "n/a",
+   "fix": "Search \"electric balance bike\" in Google (US, desktop, signed out). Copy the PAA questions, then compare them with the 10 FAQ questions plus the 2 added in ct-buyerq."
+  },
+  {
+   "id": "ai-answer",
+   "category": "Content",
+   "ai": true,
+   "check": "Answer first",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "The page opens with the product grid. The first prose sentence is \"The Orion eSeries electric balance bikes redefine what a kids electric balance bike can be, offering true off-road capability rather than just a simple training tool.\" That is a positioning claim, not an answer. The definition only appears in FAQ 1, about 300 words in.",
+   "competitors": "Husqvarna and Harley-Davidson open with plain descriptive prose.",
+   "fix": "Use the answer-first paragraph in Rewritten elements, under the H1 and above the grid."
+  },
+  {
+   "id": "ai-summary",
+   "category": "Content",
+   "ai": true,
+   "check": "Standalone 40–60 word opening summary",
+   "verdict": "Fail",
+   "severity": "High",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "There is no opening paragraph that makes sense extracted on its own. The eSeries intro depends on the \"Meet Our\" header and comes after the grid.",
+   "competitors": "n/a",
+   "fix": "The rewritten opening (60 words) works on its own: it defines the term and names sizes, ages, prices, runtime and shipping."
+  },
+  {
+   "id": "ai-chunks",
+   "category": "Content",
+   "ai": true,
+   "check": "Self-contained chunks",
+   "verdict": "Warn",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "The FAQ answers stand alone, except FAQ 4 (\"See teh picture below for Orion electric balance bike sizing\"), which depends on an image with no alt text.",
+   "competitors": "n/a",
+   "fix": "Change FAQ 4 to: \"It depends on your child's height and inseam. When the bike fits, your child can put both feet flat on the ground while seated. The size table on this page lists the seat height and rider range for each Orion model.\""
+  },
+  {
+   "id": "ai-defs",
+   "category": "Content",
+   "ai": true,
+   "check": "Definition clarity",
+   "verdict": "Warn",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "\"Electric balance bike\" is defined in FAQ 1. \"eSeries\" (Orion's electric line name), \"race/MAX mode\" (FAQ 6) and \"brushless hub drive\" (FAQ 10) are used without definition.",
+   "competitors": "n/a",
+   "fix": "FAQ 6: add \"Race mode is adult-unlocked and intended for closed courses.\" Eyebrow: \"The Orion eSeries is our electric balance bike range.\""
+  },
+  {
+   "id": "ai-formats",
+   "category": "Content",
+   "ai": true,
+   "check": "Extractable formats (tables, lists)",
+   "verdict": "Fail",
+   "severity": "Medium",
+   "effort": "M",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "0 tables and 1 list. Model specs (wheel size, motor, voltage, ages, price) exist only in card titles and URLs. Sizing exists only as an image.",
+   "competitors": "0 of 3 readable competitors use a table. Orion's own /pages/comparison-of-bikes has one.",
+   "fix": "Under the product grid, add a table with columns Model | Wheel | Motor | Battery | Ages | Price. Rows: e12x | 12\" | 250W | 24V | 3–6 | $699; e16x | 16\" | 500W | 36V | 4–8 | $999; e20x-FS | 20\" full suspension | 500W | 48V | per product page | $1,549; e24x | 24\" full suspension | 750W | 60V | per product page | $1,699. Pull seat height and maximum rider weight from each product page. Note: the e16x product page says 120 lbs in its description and 160 lbs in its FAQ, so confirm the right figure first."
+  },
+  {
+   "id": "ai-stats",
+   "category": "Content",
+   "ai": true,
+   "check": "Statistics with named source",
+   "verdict": "Warn",
+   "severity": "Low",
+   "effort": "S",
+   "owner": "Content",
+   "impact": "AI visibility",
+   "actual": "The figures (up to 4 hours, 20+ miles, 4–20 mph, 2–4 hour charge) are stated with no basis, and no comparison figure is given.",
+   "competitors": "n/a",
+   "fix": "Attribute the runtime claim: \"up to 4 hours per charge, vs 30 minutes to 2.5 hours for STACYC and Kawasaki (see our spec comparison)\", linking to /pages/comparison-of-bikes."
+  }
+ ],
+ "status": {}
+}
