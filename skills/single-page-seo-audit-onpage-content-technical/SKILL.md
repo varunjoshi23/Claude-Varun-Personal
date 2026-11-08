@@ -1,13 +1,49 @@
 ---
 name: "single-page-seo-audit-onpage-content-technical"
-description: "Audits a single landing page across on-page, content and technical signals against top-ranking SERP competitors for a primary keyword, then outputs a live fix tracker (competitor comparison plus Technical, On-page and Content sections) and, on request, a spreadsheet export. Use for single page SEO audit, on-page audit, technical audit, competitor gap analysis, or \"why isn't this page ranking\"."
+description: "Audits a single landing page across on-page, content and technical signals against top-ranking SERP competitors for a primary keyword, then outputs a live fix tracker (competitor comparison plus Technical, On-page and Content sections) and, on request, a spreadsheet export. Runs one client or a batch of many with a fixed check catalog and a portfolio roll-up. Use for single page SEO audit, on-page audit, technical audit, competitor gap analysis, or \"why isn't this page ranking\"."
 ---
 
 # Single Page SEO Audit: On-Page, Content and Technical
 
 Audit one landing page against the pages currently ranking for its primary keyword, and return a prioritised gap list as a live fix tracker the client can work from. Scope is one URL per run. For site-wide work, run this per priority page.
 
-This skill is standalone. It does not depend on the content brief, topical map or drafting skills, and it does not write page copy beyond the rewritten elements in Stage 7.
+This skill is standalone. It does not depend on the content brief, topical map or drafting skills, and it does not write page copy beyond the rewritten elements in Stage 7. It is industry-neutral and built to run the same way for many clients (see Running at scale).
+
+## Bundled resources
+
+Use these files instead of rewriting them on each run. They are what keep 50 audits consistent. Paths are relative to this skill's folder.
+
+| File | Use it for |
+|---|---|
+| `references/checks.md` | The fixed check catalog: 51 stable IDs across Technical, On-page and Content. Every audit runs every check. |
+| `scripts/parse_page.py` | Stage 1c: extracts the element set from saved raw HTML, including the heading list in order, counts, links, JSON-LD and keyword phrase counts. Every count you report comes from this output, never typed by hand. |
+| `scripts/lab_vitals.js` | Stages 1d and 5: Chromium lab vitals and rendered-page checks when PageSpeed Insights is unavailable. |
+| `scripts/validate_jsonld.py` | Non-negotiable 9: strict JSON-LD validation (comments, trailing commas, unresolved `@id`s, empty placeholders). |
+| `scripts/check_audit.py` | Before preview, seeding or export: validates the client's `audit.json` against the catalog and the document shapes, and prints the per-section totals to use in the hand-over. |
+| `scripts/preview_tracker.js` | Stage 7: renders `assets/tracker.html` with the client's data and screenshots every tab. |
+| `scripts/to_db_ops.py` | Stage 7: splits `audit.json` into `db_write` batches of 50 or fewer for a new tracker. |
+| `scripts/export_xlsx.py` | The spreadsheet export, with formula-driven summary counts. |
+| `scripts/portfolio.py` | Running at scale: adds or updates the client's row in the portfolio workbook. |
+| `assets/tracker.html` | The tracker page. Publish it unchanged. |
+
+Run Python helpers with `python3 -I`. They need `beautifulsoup4`, `lxml` and `openpyxl`; the Node helpers need `playwright` with Chromium.
+
+**One file per client: `audit.json`.** Collect everything the deliverable needs into a single file:
+
+```json
+{
+  "meta": {
+    "audit": {"client": "", "pageLabel": "", "url": "", "keyword": "", "secondary": "", "scope": "", "device": "", "date": "", "position": "", "basis": "", "method": []},
+    "competitors": {"cols": [], "rows": [], "behind": {}, "note": ""},
+    "outline": {"items": []},
+    "rewrites": {"blocks": []}
+  },
+  "findings": [],
+  "status": {}
+}
+```
+
+The preview, the database seed, the spreadsheet export and the portfolio row are all generated from this file, so they cannot disagree. Leave `status` empty for a new audit. For an export, fill it from the live tracker. Stage 7 documents every field.
 
 ## Non-negotiables
 
@@ -18,7 +54,7 @@ This skill is standalone. It does not depend on the content brief, topical map o
 5. Recommendations are rewrite-ready. Give the replacement string, not the instruction to write one.
 6. Recommend subtractively first. Before proposing anything new, look for duplicated headings, repeated blocks and padding already on the page and say what to delete or demote. Cap new top-level sections at two, and prefer changes that reuse what is there. A gap list that reads as "add eight sections" is a failed audit.
 7. **Scope is this one URL.** Check only what the audited page serves: its HTTP response, its HTML and markup, and the links it contains. Do not flag issues that live on other URLs, such as old post IDs that redirect elsewhere, non-www or HTTP host redirects, or another page's markup, unless the audited page links to that URL. If you notice one, mention it once in Method and limits as out of scope, never as a finding.
-8. **Check the site before calling something missing.** Before recommending an entity, schema block, hours or a claim ("same-day emergencies", "accepting new patients"), look at the site's own related pages (location, about, contact pages). If the data already exists there, say so, reuse it, and frame the finding as "this page doesn't use or connect to it", not "the site lacks it". Never write "only if true" when the site already answers the question.
+8. **Check the site before calling something missing.** Before recommending an entity, a schema block, business details or a claim (opening hours, "free returns", "24/7 support", "accepting new clients"), look at the site's own related pages (location, contact, about, pricing and team pages). If the data already exists there, say so, reuse it, and frame the finding as "this page doesn't use or connect to it", not "the site lacks it". Never write "only if true" when the site already answers the question.
 9. **Every code recommendation must be valid and complete.** JSON-LD, robots rules, redirects and HTML snippets must work as pasted:
    - JSON has no comments, no `/* placeholders */` and no trailing commas. Parse every JSON-LD block strictly (`json.loads`) and check that every `@id` reference resolves before it goes into the deliverable.
    - Fill values from the site's own pages (addresses, geo, hours, phone, profile links). If a value cannot be found, leave the property out and say which one in the label. Do not leave a blank to fill in.
@@ -101,9 +137,9 @@ Compare the raw HTML text content against the rendered text content. If the main
 
 Parse and record: title, meta description, canonical, meta robots, viewport, lang, hreflang set, OG and Twitter tags, every heading in document order with level, word count of main content, paragraph count, image count with alt text present or missing, internal link count with anchors, external link count with targets, every JSON-LD and microdata block, publish and modified dates, author block, table and list counts, FAQ or Q&A blocks, CTA elements.
 
-Keep the full heading list in document order, H1 to H6 including footer headings, because it becomes the Content outline in Stage 4.
+Run `scripts/parse_page.py page.html <url> --keywords "<primary>;<secondary...>" --text` and keep its output; it covers every item above. Keep the full heading list in document order, H1 to H6 including footer headings, because it becomes the Content outline in Stage 4. Take every count you report (headings per level, words, links, images) from this output.
 
-Then read the site's own pages that the audited page links to and that hold facts it should reuse: location, contact, about and team pages. Record their JSON-LD (`@id`s, address, geo, opening hours, phone, `sameAs` profile links) and any facts they state, such as hours, emergency availability, new-patient status and languages. Non-negotiable 8 depends on this, and so do the JSON-LD rewrites in Stage 7.
+Then read the site's own pages that the audited page links to and that hold facts it should reuse: location, contact, about and team pages. Record their JSON-LD (`@id`s, address, geo, opening hours, phone, `sameAs` profile links) and any facts they state: availability, guarantees, service areas, pricing, languages, credentials. Non-negotiable 8 depends on this, and so do the JSON-LD rewrites in Stage 7.
 
 ### 1d. Page speed
 
@@ -113,7 +149,7 @@ PageSpeed Insights API, mobile and desktop:
 https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=$URL&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices
 ```
 
-It works without a key at low volume; use `&key=` if the user has one. Record lab LCP, INP/TBT, CLS, performance score, page weight, request count, render-blocking resources, and field CrUX data if present. Field data beats lab data when both exist, say which one you are quoting.
+It works without a key at low volume; use `&key=` if the user has one. The keyless quota runs out quickly when you audit many clients. Ask for a key once per batch. When the API is unavailable, run `node scripts/lab_vitals.js <url>` and label its numbers "local lab" with the throttling profile, never as PageSpeed or field data. Record lab LCP, INP/TBT, CLS, performance score, page weight, request count, render-blocking resources, and field CrUX data if present. Field data beats lab data when both exist, say which one you are quoting.
 
 ### 1e. Indexing
 
@@ -144,7 +180,7 @@ It works without a key at low volume; use `&key=` if the user has one. Record la
 
 ## Stage 3: On-page audit
 
-Score the client page against each check. Record the actual value, the verdict, the competitor pattern, and the fix.
+Score the client page against each check. Record the actual value, the verdict, the competitor pattern, and the fix. The checks in Stages 3 to 5 map to the stable IDs in `references/checks.md`. Use those IDs and check names exactly, and give every catalog check a verdict.
 
 | Check | Pass condition | Also capture |
 |---|---|---|
@@ -293,11 +329,13 @@ Build it as a self-contained HTML page published as an artifact with the `db` an
 **Use the bundled template.** `assets/tracker.html` is the finished tracker page, and its layout, styling and behaviour are the standard. Publish it as it is. Change only the `<title>` text, using the same words as the artifact title. Do not redesign it, restyle it or hardcode findings into it. Every client-specific value comes from the database, so the same file serves every audit.
 
 **Build order.**
-1. Preview the page locally before publishing. Open `assets/tracker.html` in Chromium with a mock `window.claude` that serves your seed data. Screenshot the default view and each section tab, and confirm there are no page errors.
-2. Publish the file.
-3. Declare capabilities.
-4. Seed the data.
-5. Re-read one document of each kind to confirm the writes landed.
+1. Write the client's `audit.json`.
+2. Run `python3 -I scripts/check_audit.py audit.json`. Fix every error; it also validates each JSON-LD rewrite.
+3. Run `node scripts/preview_tracker.js assets/tracker.html audit.json <outdir>`. Look at the four tab screenshots, and fix anything that renders wrong or reports a page error.
+4. Publish `assets/tracker.html` (title: "<Client>: <pageLabel> SEO audit").
+5. Declare capabilities.
+6. Run `python3 -I scripts/to_db_ops.py audit.json <outdir>` and send each `ops_NN.json` as one `db_write` call, about 2 seconds apart.
+7. Re-read one document of each kind to confirm the writes landed.
 
 Declare:
 
@@ -312,7 +350,7 @@ Declare:
 Findings and meta stay editor-only, so a status update cannot overwrite the audit itself.
 
 **Documents** (the template reads exactly these shapes):
-- `meta/audit`: `client`, `pageLabel` (short page name for the H1, e.g. "general dentistry page"), `url`, `keyword`, `scope`, `device`, `date`, `position` (an honest one-line label), `basis` (one line on how scores are calculated), `method` (array of paragraphs). Do not store scores: the page calculates them live from the findings.
+- `meta/audit`: `client`, `pageLabel` (short page name for the H1, e.g. "managed IT services page"), `url`, `keyword`, `scope`, `device`, `date`, `position` (an honest one-line label), `basis` (one line on how scores are calculated), `method` (array of paragraphs). Do not store scores: the page calculates them live from the findings.
 - `meta/competitors`: `cols`, `rows`, `behind`, `note`.
   - `cols`: column headers. Required order: Page, Position*, Ranking URL, then comparison columns.
   - `rows`: `{client?: true, cells: [...]}`. The client row comes first, then competitors sorted by position.
@@ -354,23 +392,63 @@ Findings and meta stay editor-only, so a status update cannot overwrite the audi
 
 **Hand over with the access rule**, in one line: the client needs Contributor level or above to update status, and Viewer or Commenter is read-only. Include the Do this week list and the recounted totals (non-negotiable 10).
 
-**Spreadsheet export.** When the user asks for a spreadsheet or tracking file, read the live database first (`findings`, `status`, `feedback`, `meta`) so statuses and notes are current. Build an `.xlsx` with Arial throughout and these sheets:
-1. **Summary**:
-   - The audit details.
-   - A section table (Technical, On-page, Content, Total): score, checks run, passed, warn, fail, not checked, open, fixed. Every number is a `COUNTIFS` formula over the Findings sheet.
-   - "Issues fixed" as a percentage of Fail and Warn findings.
-   - A note that changing a Verdict or Status on Findings updates the summary.
-2. **Competitors**: the comparison table with the Position column. The client row is bold, its behind cells are red, and the source note sits underneath.
-3. **Findings**: one row per finding. Columns: Section, Group (Issue to resolve / Not checked / Passed), ID, Check, AI check, Verdict, Severity, Effort, Owner, Impact, Status, Notes, What is on the page now, Competitor pattern, Fix / how to check.
-   - Rows sorted by section, then group, severity and effort.
-   - Dropdowns on Status and Owner, conditional colours on Verdict, Severity and Status, frozen header and autofilter.
-4. **Content outline**: #, Tag, Current heading (indented by level), Action (coloured), New heading, Recommendation.
-5. **Rewrites**: Section, Element, Now, Replace with. JSON-LD goes in a monospace font.
-6. **Method & limits**.
+**Spreadsheet export.** When the user asks for a spreadsheet or tracking file:
+1. Read the live database first (`findings`, `status`, `feedback`, `meta`) so statuses and notes are current, and refresh `audit.json` from it.
+2. Run `python3 -I scripts/export_xlsx.py audit.json <Client>-<page>-SEO-audit.xlsx --tracker-url <url> --exported <date>`.
+3. Run the xlsx skill's `recalc.py`. Require zero formula errors, and check that the section scores match `check_audit.py`'s totals before sending.
 
-Run the xlsx skill's `recalc.py`, require zero formula errors, and check that the section scores match what the tracker shows before you send the file.
+The workbook uses Arial and has six sheets:
+- **Summary**: audit details, and a Technical / On-page / Content / Total table whose numbers are all `COUNTIFS` formulas over Findings.
+- **Competitors**: the comparison with its Position column.
+- **Findings**: one row per finding, with Status and Owner dropdowns, verdict and severity colours, and filters.
+- **Content outline.**
+- **Rewrites.**
+- **Method & limits.**
 
 ---
+
+## Running at scale (many clients)
+
+The skill runs the same way for every client. These rules keep 50 audits consistent and comparable.
+
+**Batch input.** For more than one client, ask for a list (a sheet, CSV or table). One row per client:
+- client
+- page URL
+- primary keyword
+- secondary keywords (semicolon-separated)
+- targeting (global, or the named location)
+- country
+- language
+- device
+
+Ask the Stage 0 data-source question once for the whole batch, and ask for API keys once. Check the list for missing fields and ask about all of them in one message.
+
+**Per client, the full run.** Every client gets every stage and every catalog check. Never shorten later clients to save time: if the batch is too large for one session, stop at a client boundary and say exactly which clients are done.
+
+**Review gate in batch mode.** Do not stop for approval on each client's competitor set. Proceed with the top five same-type pages, list each client's set in the hand-over, and swap any the user rejects afterwards.
+
+**Network.** If the sandbox blocks hosts:
+- Request access once for all the batch's client domains.
+- Request access once per client for its competitor domains, after Stage 2.
+- Never route around a block.
+- Record anything you could not reach as `Not checked`.
+
+**One tracker per client.** Never put two clients in one tracker. Titles follow "<Client>: <pageLabel> SEO audit". Keep each client's `audit.json`, keyed by client and page, so a re-audit can update the same tracker.
+
+**Portfolio.** After each client, run `python3 -I scripts/portfolio.py portfolio.xlsx audit.json --tracker-url <url>`. It writes one row per client and page: scores, open and fixed issues, high-severity open issues, the top three open issues, and the tracker link. Re-running a client updates its row instead of adding a duplicate. Send the portfolio at the end of the batch.
+
+**Re-audits.** To re-audit a client:
+- Re-run the stages and rebuild `audit.json` with the same IDs.
+- Update the existing tracker's `findings` and `meta` with `ifVersion`. Never touch `status` or `feedback`, which belong to the client.
+- Refresh the portfolio row.
+
+**Hand-over per batch.** For each client:
+- its tracker link
+- the three section scores and open issues, from `check_audit.py`
+- the Do this week items
+- anything not checked
+
+End with the portfolio workbook.
 
 ## Handoff
 
