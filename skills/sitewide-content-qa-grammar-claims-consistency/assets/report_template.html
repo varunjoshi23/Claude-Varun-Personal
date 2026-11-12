@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root{--bg:#f7f6f2;--paper:#fff;--ink:#1b1b19;--mute:#66645d;--line:#e3e0d8;--soft:#f1efe9;--hi:#b42318;--md:#b45309;--lo:#3f6f8f;--acc:#24476b;--q:#fff6e5;--fix:#eaf5ee}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--paper:#1c1c1a;--ink:#ecebe6;--mute:#a5a39b;--line:#33322e;--soft:#252421;--hi:#f2867f;--md:#f0a35e;--lo:#8fb5d6;--acc:#9cc2e6;--q:#2e2818;--fix:#1d2c22}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+.top{background:var(--paper);border-bottom:1px solid var(--line)}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.hero{padding:36px 0 26px}.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}h1{font-size:30px;line-height:1.2;margin:6px 0 10px}
+.lede{max-width:760px;color:var(--mute)}
+nav.seg{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}nav.seg .wrap{display:flex;gap:4px;overflow-x:auto}nav.seg a{white-space:nowrap;padding:11px 12px;color:var(--mute);text-decoration:none;font-size:14px;border-bottom:2px solid transparent}nav.seg a:hover{color:var(--ink);border-color:var(--acc)}
+section{padding:34px 0 8px}h2{font-size:22px;margin:0 0 4px}.blurb{color:var(--mute);margin:0 0 18px;max-width:780px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.sc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit;display:block}.sc:hover{border-color:var(--acc)}.sc .n{font-size:28px;font-weight:700;line-height:1}.sc .t{font-weight:600;margin:6px 0 2px}.sc .s{font-size:13px;color:var(--mute)}.dots{display:flex;gap:4px;margin-top:8px}.dot{font-size:11px;padding:1px 7px;border-radius:9px;border:1px solid var(--line)}
+.dot.h{color:var(--hi);border-color:var(--hi)}.dot.m{color:var(--md);border-color:var(--md)}.dot.l{color:var(--lo);border-color:var(--lo)}
+.tbl{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}.tbl th,.tbl td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.tbl th{background:var(--soft);font-size:12px;color:var(--mute);font-weight:600}
+.scroll{overflow-x:auto}.heat td.c{text-align:center;font-weight:600;width:96px}.heat td.c[data-v="0"]{color:var(--mute);font-weight:400}
+.f{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 14px}.f.High{border-left-color:var(--hi)}.f.Medium{border-left-color:var(--md)}.f.Low{border-left-color:var(--lo)}
+.fh{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.fh h3{margin:0;font-size:17px;flex:1 1 420px}.pill{font-size:12px;font-weight:700;padding:2px 9px;border-radius:10px;color:#fff}.pill.High{background:var(--hi)}.pill.Medium{background:var(--md)}.pill.Low{background:var(--lo)}@media (prefers-color-scheme:dark){.pill{color:#111}}
+.tag{font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--acc);color:var(--acc)}
+.ev{margin:12px 0 8px}.ev .row{display:grid;grid-template-columns:190px 1fr;gap:10px;padding:6px 0;border-top:1px dashed var(--line)}.ev .row:first-child{border-top:0}.pg{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--mute);word-break:break-all}.qt{background:var(--q);padding:3px 7px;border-radius:5px;font-size:14px}.src{font-size:11px;color:var(--mute);margin-left:6px;white-space:nowrap}
+.lab{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin-top:10px}.why{margin:2px 0}.rec{background:var(--fix);padding:8px 10px;border-radius:7px;margin-top:3px}
+.note{font-size:13px;color:var(--mute)}
+.gr td:nth-child(2) .qt{display:inline}.gr td:nth-child(3){background:var(--fix)}
+.dec li{margin:6px 0}.dec input{accent-color:var(--acc);margin-right:8px}
+@media (max-width:640px){.ev .row{grid-template-columns:1fr}h1{font-size:24px}}
+footer{padding:30px 0 60px;color:var(--mute);font-size:13px}
+</style></head><body>
+<div class="top"><div class="wrap"><header class="hero">
+<div class="kicker" id="kicker"></div>
+<h1 id="headline"></h1>
+<p class="lede" id="lede"></p>
+</header></div></div>
+<nav class="seg"><div class="wrap" id="nav"></div></nav>
+<main class="wrap">
+<section id="overview"><h2>At a glance</h2><p class="blurb" id="glance"></p><div class="cards" id="cards"></div>
+<h3 style="margin-top:28px">Top 5 to fix first</h3><ol id="top5"></ol>
+<h3 style="margin-top:22px">Where the issues are</h3><p class="note">Number of findings citing each page, by segment.</p><div class="scroll"><table class="tbl heat" id="heat"></table></div></section>
+<div id="segs"></div>
+<section id="decisions"><h2 id="dech"></h2><p class="blurb" id="decb"></p><ul class="dec" id="declist"></ul></section>
+<section id="scope"><h2>Scope &amp; method</h2>
+<p><b>Pages reviewed (<span id="pn"></span>):</b> <span id="plist"></span></p>
+<p><b>Not reviewed:</b> <span id="notrev"></span></p>
+<p><b>Method:</b> <span id="method"></span></p>
+<p id="disc"></p></section>
+</main>
+<footer class="wrap" id="foot"></footer>
+<script>
+const D=__DATA__;const M=__METRICS__;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+const P=D.pages, segs=D.segments, m=D.meta, srcLbl={text:'',collapsed:'collapsed section',title:'page title',meta:'meta description',og:'social share text',schema:'schema',html:'page source',alt:'image alt text',boiler:'header / footer'};
+const short=k=>P[k]||k;
+const evn=segs.reduce((a,s)=>a+s.items.reduce((b,i)=>b+i.evidence.length,0),0);
+$('kicker').textContent=m.kicker;$('headline').textContent=m.headline;
+$('lede').innerHTML=esc(m.lede).replace('{N}','<b>'+evn+'</b>');
+$('glance').textContent=m.glance;
+$('nav').innerHTML='<a href="#overview">Overview</a>'+segs.map((s,i)=>`<a href="#${s.id}">${i+1}. ${esc(s.name)}</a>`).join('')+'<a href="#decisions">Decisions</a><a href="#scope">Scope</a>';
+const cnt=(s,l)=>s.items.filter(i=>i.impact===l).length;
+$('cards').innerHTML=segs.map((s,i)=>`<a class="sc" href="#${s.id}"><div class="n">${s.items.length}</div><div class="t">${i+1}. ${esc(s.name)}</div><div class="s">${esc(s.verdict||'')}</div><div class="dots">${cnt(s,'High')?`<span class="dot h">${cnt(s,'High')} high</span>`:''}${cnt(s,'Medium')?`<span class="dot m">${cnt(s,'Medium')} medium</span>`:''}${cnt(s,'Low')?`<span class="dot l">${cnt(s,'Low')} low</span>`:''}</div></a>`).join('');
+$('top5').innerHTML=D.top5.map(t=>`<li>${esc(t)}</li>`).join('');
+const keys=Object.keys(P);
+$('heat').innerHTML='<tr><th>Page</th>'+segs.map((s,i)=>`<th>${i+1}. ${esc(s.short||s.name.split(' ')[0])}</th>`).join('')+'<th>Total</th></tr>'+keys.map(k=>{let tot=0;const cells=segs.map(s=>{const n=s.items.filter(i=>i.evidence.some(e=>e.page===k)).length;tot+=n;const a=Math.min(n/6,1);return `<td class="c" data-v="${n}" style="background:rgba(180,35,24,${(a*0.35).toFixed(2)})">${n}</td>`}).join('');return `<tr><td class="pg">${esc(short(k))}</td>${cells}<td class="c" data-v="${tot}">${tot}</td></tr>`}).join('');
+function ev(e){return `<div class="row"><div class="pg">${esc(short(e.page))}</div><div><span class="qt">${esc(e.quote)}</span>${srcLbl[e.src]?`<span class="src">· ${srcLbl[e.src]}</span>`:''}</div></div>`}
+function card(i){const k=i.kind==='decision'?'<span class="tag">Decision needed</span>':i.kind==='review'?`<span class="tag">${esc(m.review_label||'Specialist review')}</span>`:'';
+return `<div class="f ${i.impact}"><div class="fh"><h3>${esc(i.title)}</h3><span class="pill ${i.impact}">${i.impact}</span>${k}</div><div class="lab">What the site says</div><div class="ev">${i.evidence.map(ev).join('')}</div>${i.why?`<div class="lab">Why it matters</div><p class="why">${esc(i.why)}</p>`:''}<div class="lab">Recommendation</div><div class="rec">${esc(i.rec)}</div>${i.note?`<p class="note">${esc(i.note)}</p>`:''}</div>`}
+$('segs').innerHTML=segs.map((s,n)=>{let body;
+ if(s.layout==='grammar'){const g=s.items.filter(i=>i.kind==='grammar'),o=s.items.filter(i=>i.kind!=='grammar');
+  body=`<div class="scroll"><table class="tbl gr"><tr><th>Page</th><th>Current text</th><th>Suggested correction</th></tr>${g.map(i=>`<tr><td class="pg">${esc(short(i.evidence[0].page))}</td><td><span class="qt">${esc(i.evidence[0].quote)}</span>${srcLbl[i.evidence[0].src]?`<span class="src">· ${srcLbl[i.evidence[0].src]}</span>`:''}${i.evidence.length>1?`<span class="src">· +${i.evidence.length-1} more page(s)</span>`:''}</td><td>${esc(i.rec)}</td></tr>`).join('')}</table></div><div style="margin-top:14px">${o.map(card).join('')}</div>`}
+ else if(s.layout==='ai'){body=`<h3>Readability snapshot</h3><div class="scroll"><table class="tbl"><tr><th>Page</th><th>Sentences</th><th>Avg words / sentence</th><th>Longest</th><th>% over 30 words</th><th>Flesch ease</th><th>Boilerplate share</th><th>H1s</th></tr>${M.map(r=>`<tr><td class="pg">${esc(short(r.page))}</td><td>${r.sentences}</td><td>${r.avg}</td><td>${r.max}</td><td>${r.over30}%</td><td>${r.flesch}</td><td>${r.boiler==null?'n/a':r.boiler+'%'}</td><td>${r.h1}</td></tr>`).join('')}</table></div><p class="note">Targets for answer-engine friendly copy: average under 20 words per sentence, under 10% of sentences over 30 words, Flesch ease 50 or higher, one H1 per page, and mostly unique text.</p><div style="margin-top:16px">${s.items.map(card).join('')}</div>`}
+ else body=s.items.map(card).join('');
+ return `<section id="${s.id}"><h2>${n+1}. ${esc(s.name)}</h2><p class="blurb">${esc(s.blurb)}</p>${body}</section>`}).join('');
+$('dech').textContent=m.decisions_heading;$('decb').textContent=m.decisions_blurb;
+$('declist').innerHTML=segs.flatMap(s=>s.items.filter(i=>i.kind==='decision'||i.kind==='review').map(i=>`<li><label><input type="checkbox">${esc(i.title)} <span class="note">(${esc(s.name)})</span></label></li>`)).join('');
+$('pn').textContent=keys.length;
+$('plist').innerHTML=keys.map(k=>`<a href="https://${esc(m.domain)}${esc(P[k])}">${esc(P[k])}</a>`).join(' · ');
+$('notrev').textContent=m.not_reviewed;$('method').textContent=m.method;
+$('disc').innerHTML=m.disclaimer?'<b>'+esc(m.disclaimer_label||'Note.')+'</b> '+esc(m.disclaimer):'';
+$('foot').textContent=m.footer;
+</script>
+</body></html>
